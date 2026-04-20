@@ -1,62 +1,46 @@
+import { CalendarX, Scale, EyeOff } from "lucide-react";
+
 const items = [
   {
-    title: "Manual handling",
-    body: "Managers track moments in their head, in spreadsheets, in DMs. Coverage is whoever-remembers.",
+    icon: CalendarX,
+    title: "Moments get forgotten",
+    body: "No system means important dates slip through, creating invisible damage to morale and culture.",
   },
   {
-    title: "Forgotten or delayed",
-    body: "Things slip through. Birthdays land late. Onboarding kits arrive on day 12. Anniversaries get missed entirely.",
+    icon: Scale,
+    title: "Inconsistent execution",
+    body: "Some employees get celebrated, others don't. Inequality creates resentment.",
   },
   {
-    title: "Inconsistent across teams",
-    body: "Engineering does one thing, Sales does another. Same company, completely different employee experience.",
-  },
-  {
-    title: "Operational drag on HR",
-    body: "People-ops time goes into reminders and chasing approvals — instead of strategic work.",
+    icon: EyeOff,
+    title: "Zero visibility",
+    body: "No tracking of budget, delivery, or impact. You can't improve what you can't measure.",
   },
 ];
 
 const Problem = () => {
   return (
-    <section id="problem" className="relative border-t border-border bg-surface/40">
-      <div className="mx-auto w-full max-w-[1320px] px-6 py-24 lg:px-10 lg:py-32">
-        <div className="grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent-foreground/60">
-              ◆ The Problem
-            </span>
-            <h2 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight text-primary lg:text-5xl">
-              Employee moments are not the problem. Managing them is.
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-primary/60">
-              Every growing team eventually hits the same wall: a fragmented, manual,
-              human-dependent process that quietly breaks under scale.
-            </p>
-          </div>
+    <section id="problem" className="relative border-t border-border">
+      <div className="mx-auto w-full max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground lg:text-5xl">
+            The hidden cost of doing it manually
+          </h2>
+        </div>
 
-          <div className="lg:col-span-7">
-            <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
-              {items.map((it, i) => (
-                <div key={i} className="bg-surface p-6 lg:p-7">
-                  <div className="mb-3 flex items-center gap-2">
-                    <span className="font-mono text-[10px] text-primary/40">
-                      0{i + 1}
-                    </span>
-                    <div className="h-px flex-1 bg-border" />
-                  </div>
-                  <h3 className="font-display text-base font-semibold text-primary">
-                    {it.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-primary/60">{it.body}</p>
-                </div>
-              ))}
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {items.map(({ icon: Icon, title, body }) => (
+            <div
+              key={title}
+              className="group relative rounded-2xl border border-border bg-card p-7 transition-all hover:border-accent/40 hover:shadow-glow"
+            >
+              <div className="mb-5 inline-flex size-11 items-center justify-center rounded-xl border border-accent/30 bg-accent/10 text-accent">
+                <Icon className="size-5" strokeWidth={1.5} />
+              </div>
+              <h3 className="font-display text-lg font-bold text-foreground">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
             </div>
-
-            <p className="mt-8 font-mono text-sm uppercase tracking-wider text-primary/50">
-              <span className="text-accent">▸</span> It works… until it doesn't.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
