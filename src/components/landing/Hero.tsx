@@ -9,11 +9,11 @@ const Hero = () => {
       <div className="relative mx-auto w-full max-w-[1240px] px-6 pb-20 pt-20 lg:px-10 lg:pb-28 lg:pt-28">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground text-balance lg:text-7xl">
-            Never miss a moment <span className="text-accent text-glow">that matters.</span>
+            Never miss a moment <span className="text-accent text-glow">that matters</span> — without changing your HR stack.
           </h1>
           <p className="mx-auto mt-6 max-w-[58ch] text-lg leading-relaxed text-muted-foreground text-pretty">
-            Remvy automatically plans, executes and tracks every important employee moment — without
-            adding complexity to your stack.
+            Remvy plans, manages and executes employee moments end-to-end — handling gifts, logistics
+            and tracking for you.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -32,7 +32,7 @@ const Hero = () => {
           </div>
 
           <p className="mt-6 text-sm text-muted-foreground">
-            Works with your existing HRIS, spreadsheets and Slack. No migration required.
+            Works with your existing HR tools, spreadsheets and workflows.
           </p>
         </div>
 

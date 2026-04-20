@@ -4,17 +4,17 @@ const items = [
   {
     icon: CalendarX,
     title: "Moments get forgotten",
-    body: "No system means important dates slip through, creating invisible damage to morale and culture.",
+    body: "Without a system, key dates slip through. No one orders the gift. No one signs the card.",
   },
   {
     icon: Scale,
     title: "Inconsistent execution",
-    body: "Some employees get celebrated, others don't. Inequality creates resentment.",
+    body: "Some employees get a curated gift, others get nothing. The difference shows — and people notice.",
   },
   {
     icon: EyeOff,
-    title: "Zero visibility",
-    body: "No tracking of budget, delivery, or impact. You can't improve what you can't measure.",
+    title: "Zero coordination",
+    body: "Last-minute orders, scattered budgets, no delivery tracking. Hours wasted every month on logistics.",
   },
 ];
 

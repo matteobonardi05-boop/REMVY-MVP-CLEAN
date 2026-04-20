@@ -1,9 +1,9 @@
 const moments = [
-  { emoji: "🎂", title: "Birthday", body: "Artisan cake + personalized card" },
-  { emoji: "📅", title: "Work Anniversary", body: "Branded merch + handwritten letter" },
-  { emoji: "👋", title: "Onboarding", body: "Welcome kit delivered day one" },
-  { emoji: "🏆", title: "Milestone", body: "Custom experience or premium gift" },
-  { emoji: "🎉", title: "Team Moment", body: "Group celebration execution" },
+  { emoji: "🎂", title: "Cakes", body: "Artisan birthday cakes from local bakers, delivered to office or home." },
+  { emoji: "💐", title: "Flowers", body: "Curated bouquets for births, condolences and special occasions." },
+  { emoji: "👕", title: "Branded Merch", body: "Quality apparel and accessories for anniversaries and milestones." },
+  { emoji: "📦", title: "Welcome Kits", body: "Onboarding boxes delivered day one — from laptop sleeves to local treats." },
+  { emoji: "🎟️", title: "Experience Gifts", body: "Dinners, spa days, weekend getaways for retention milestones." },
 ];
 
 const Moments = () => {
@@ -14,6 +14,9 @@ const Moments = () => {
           <h2 className="font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground lg:text-5xl">
             Every moment, handled.
           </h2>
+          <p className="mt-5 text-base text-muted-foreground">
+            From simple gestures to fully customized experiences.
+          </p>
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-5">
@@ -30,7 +33,7 @@ const Moments = () => {
         </div>
 
         <p className="mt-10 text-center text-sm text-muted-foreground">
-          Physical, digital or hybrid — Remvy handles the logistics regardless of format.
+          Physical, digital or hybrid — Remvy sources, ships and tracks every gift end-to-end.
         </p>
       </div>
     </section>
