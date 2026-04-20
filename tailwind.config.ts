@@ -14,9 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Urbanist", "Inter", "sans-serif"],
-        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+        display: ["Urbanist", "DM Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -73,6 +72,7 @@ export default {
         elegant: "var(--shadow-elegant)",
         soft: "var(--shadow-soft)",
         cta: "var(--shadow-cta)",
+        glow: "var(--shadow-glow)",
       },
       borderRadius: {
         lg: "var(--radius)",
