@@ -1,4 +1,4 @@
-import { Cake, Sparkles, Crown } from "lucide-react";
+import { Cake, Sparkles, Crown, type LucideIcon } from "lucide-react";
 
 type Tier = {
   name: string;
@@ -11,7 +11,7 @@ type Tier = {
   suppliers: string;
   pricing: string;
   highlighted?: boolean;
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  icon: LucideIcon;
 };
 
 const tiers: Tier[] = [
