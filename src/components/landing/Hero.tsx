@@ -6,12 +6,16 @@ const Hero = () => {
       <div className="absolute inset-0 bg-grid opacity-40" aria-hidden />
       <div className="absolute left-1/2 top-0 -z-0 h-[520px] w-[900px] -translate-x-1/2 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--accent)/0.25),transparent_60%)]" aria-hidden />
 
-      <div className="relative mx-auto w-full max-w-[1240px] px-6 pb-20 pt-20 lg:px-10 lg:pb-28 lg:pt-28">
+      <div className="relative mx-auto w-full max-w-[1240px] px-6 pb-24 pt-24 lg:px-10 lg:pb-36 lg:pt-32">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground text-balance lg:text-7xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border-strong bg-surface/60 px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+            <span className="size-1.5 rounded-full bg-accent shadow-[0_0_8px_hsl(var(--accent))]" />
+            Operational execution system
+          </span>
+          <h1 className="mt-7 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-foreground text-balance lg:text-[5.25rem]">
             Never miss a moment <span className="text-accent text-glow">that matters</span> — without changing your HR stack.
           </h1>
-          <p className="mx-auto mt-6 max-w-[58ch] text-lg leading-relaxed text-muted-foreground text-pretty">
+          <p className="mx-auto mt-7 max-w-[56ch] text-lg leading-relaxed text-muted-foreground text-pretty lg:text-xl">
             Remvy plans, manages and executes employee moments end-to-end — handling gifts, logistics
             and tracking for you.
           </p>
@@ -36,7 +40,7 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="mt-16 lg:mt-20">
+        <div className="mt-20 lg:mt-28">
           <DashboardMock />
         </div>
       </div>

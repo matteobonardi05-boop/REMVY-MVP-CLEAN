@@ -24,8 +24,8 @@ const HowItWorks = () => {
           <h2 className="font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground lg:text-5xl">
             Set it once. Remvy handles the rest.
           </h2>
-          <p className="mt-5 text-base text-muted-foreground">
-            No coordination. No last-minute orders. No missed moments.
+          <p className="mt-5 text-base text-muted-foreground lg:text-lg">
+            From planning to delivery — no manual coordination required.
           </p>
         </div>
 
