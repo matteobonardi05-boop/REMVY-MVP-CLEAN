@@ -1,121 +1,70 @@
+const rows = [
+  { name: "Marco Rossi", moment: "Birthday", date: "Apr 22", kit: "Artisan Cake", status: "Scheduled" },
+  { name: "Giulia Bianchi", moment: "Work Anniversary · 3y", date: "Apr 24", kit: "Branded Bundle", status: "Scheduled" },
+  { name: "Alessandro Conti", moment: "Onboarding", date: "Apr 18", kit: "Welcome Kit", status: "Delivered" },
+  { name: "Sara Greco", moment: "Milestone · 5y", date: "Apr 28", kit: "Premium Experience", status: "Pending" },
+  { name: "Luca Ferrari", moment: "Birthday", date: "Apr 19", kit: "Artisan Cake", status: "Delivered" },
+];
+
+const statusStyle: Record<string, string> = {
+  Scheduled: "bg-accent/15 text-accent border border-accent/30",
+  Delivered: "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30",
+  Pending: "bg-amber-500/15 text-amber-400 border border-amber-500/30",
+};
+
 const DashboardMock = () => {
-  const rows = [
-    {
-      time: "08:42:11",
-      target: "EMP-204",
-      who: "A. Chen",
-      payload: "5yr_Milestone_Grant",
-      status: "COMPLETED",
-      tone: "done" as const,
-    },
-    {
-      time: "09:15:00",
-      target: "COHORT-42",
-      who: "Group",
-      payload: "Day_1_Onboarding_Kit",
-      status: "DELIVERING",
-      tone: "active" as const,
-    },
-    {
-      time: "14:00:00",
-      target: "EMP-892",
-      who: "M. Reyes",
-      payload: "Parental_Leave_Transition",
-      status: "SCHEDULED",
-      tone: "queued" as const,
-    },
-    {
-      time: "+1d 09:00",
-      target: "EMP-114",
-      who: "J. Vance",
-      payload: "Q3_Performance_Review",
-      status: "QUEUED",
-      tone: "faded" as const,
-    },
-  ];
-
   return (
-    <div className="relative w-full">
-      <div className="absolute inset-0 -z-10 blur-3xl" style={{ background: "var(--gradient-glow)" }} />
+    <div className="relative">
+      {/* Glow halo */}
+      <div className="absolute -inset-10 -z-10 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)/0.25),transparent_60%)] blur-2xl" aria-hidden />
 
-      <div className="relative overflow-hidden rounded-md border border-border-strong/40 bg-surface shadow-elegant">
-        {/* Top bar */}
-        <div className="flex items-center justify-between border-b border-border bg-surface px-4 py-3">
-          <div className="flex items-center gap-3">
-            <div className="size-2.5 rounded-full bg-primary/15" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary/60">
-              Global Execution Matrix
-            </span>
+      <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-elegant">
+        {/* Window chrome */}
+        <div className="flex items-center justify-between border-b border-border bg-surface/60 px-5 py-3">
+          <div className="flex items-center gap-1.5">
+            <span className="size-2.5 rounded-full bg-muted-foreground/30" />
+            <span className="size-2.5 rounded-full bg-muted-foreground/30" />
+            <span className="size-2.5 rounded-full bg-muted-foreground/30" />
           </div>
-          <span className="font-mono text-[10px] text-primary/60">RUNTIME · 44.92s</span>
+          <span className="text-xs font-medium text-muted-foreground">remvy.app · upcoming moments</span>
+          <span className="text-[11px] font-medium text-accent">● Live</span>
         </div>
 
-        {/* Header row */}
-        <div className="grid grid-cols-12 gap-4 border-b border-border bg-background/60 px-6 py-3 text-xs font-medium text-primary/60">
-          <div className="col-span-3 font-mono">TIMESTAMP</div>
-          <div className="col-span-3">TARGET</div>
-          <div className="col-span-4">PAYLOAD</div>
-          <div className="col-span-2 text-right">STATUS</div>
-        </div>
-
-        {/* Rows */}
-        <div className="text-sm tabular-nums">
-          {rows.map((r, i) => {
-            const isActive = r.tone === "active";
-            const opacity =
-              r.tone === "faded" ? "opacity-50" : r.tone === "queued" ? "opacity-75" : "";
-            return (
-              <div
-                key={i}
-                className={`relative grid grid-cols-12 items-center gap-4 border-b border-border/60 px-6 py-4 ${
-                  isActive ? "bg-accent/5" : ""
-                } ${opacity}`}
-              >
-                {isActive && (
-                  <span className="absolute inset-y-0 left-0 w-[2px] bg-accent" aria-hidden />
-                )}
-                <div
-                  className={`col-span-3 font-mono text-xs ${
-                    isActive ? "font-medium text-accent" : "text-primary/60"
-                  }`}
-                >
-                  {r.time}
-                </div>
-                <div className="col-span-3 truncate font-medium text-primary">
-                  {r.target}
-                  <span className="ml-2 font-normal text-primary/50">[{r.who}]</span>
-                </div>
-                <div className={`col-span-4 truncate ${isActive ? "text-primary" : "text-primary/60"}`}>
-                  {r.payload}
-                </div>
-                <div className="col-span-2 flex items-center justify-end gap-2 font-mono text-xs">
-                  <span className={isActive ? "font-medium" : ""}>{r.status}</span>
-                  <span
-                    className={`inline-block size-1.5 rounded-full ${
-                      r.tone === "done"
-                        ? "bg-primary"
-                        : isActive
-                        ? "animate-pulse-dot bg-accent"
-                        : "bg-primary/25"
-                    }`}
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Status bar */}
-        <div className="flex items-center justify-between bg-primary px-6 py-2.5 font-mono text-[10px] uppercase tracking-wider text-primary-foreground/90">
-          <div className="flex items-center gap-6">
-            <span>
-              SYS.OPS: <span className="text-accent">NOMINAL</span>
-            </span>
-            <span className="hidden sm:inline">LATENCY: 12ms</span>
-          </div>
-          <span>
-            IN FLIGHT: <span className="text-primary-foreground">3,492</span>
-          </span>
+        {/* Table */}
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-sm">
+            <thead>
+              <tr className="border-b border-border text-[11px] uppercase tracking-wider text-muted-foreground">
+                <th className="px-5 py-3 font-medium">Employee</th>
+                <th className="px-5 py-3 font-medium">Moment</th>
+                <th className="px-5 py-3 font-medium">Date</th>
+                <th className="hidden px-5 py-3 font-medium sm:table-cell">Kit</th>
+                <th className="px-5 py-3 font-medium">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i} className="border-b border-border/60 last:border-0 hover:bg-surface/40">
+                  <td className="px-5 py-4">
+                    <div className="flex items-center gap-3">
+                      <span className="grid size-8 place-items-center rounded-full bg-accent/10 text-xs font-semibold text-accent">
+                        {r.name.split(" ").map((n) => n[0]).join("")}
+                      </span>
+                      <span className="font-medium text-foreground">{r.name}</span>
+                    </div>
+                  </td>
+                  <td className="px-5 py-4 text-muted-foreground">{r.moment}</td>
+                  <td className="px-5 py-4 text-muted-foreground">{r.date}</td>
+                  <td className="hidden px-5 py-4 text-muted-foreground sm:table-cell">{r.kit}</td>
+                  <td className="px-5 py-4">
+                    <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-medium ${statusStyle[r.status]}`}>
+                      {r.status}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
