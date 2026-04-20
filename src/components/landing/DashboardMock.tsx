@@ -1,15 +1,14 @@
 const rows = [
   { name: "Marco Rossi", moment: "Birthday", date: "Apr 22", kit: "Artisan Cake", status: "Scheduled" },
-  { name: "Giulia Bianchi", moment: "Work Anniversary · 3y", date: "Apr 24", kit: "Branded Bundle", status: "Scheduled" },
+  { name: "Giulia Bianchi", moment: "Work Anniversary · 3y", date: "Apr 24", kit: "Branded Bundle", status: "In delivery" },
   { name: "Alessandro Conti", moment: "Onboarding", date: "Apr 18", kit: "Welcome Kit", status: "Delivered" },
-  { name: "Sara Greco", moment: "Milestone · 5y", date: "Apr 28", kit: "Premium Experience", status: "Pending" },
-  { name: "Luca Ferrari", moment: "Birthday", date: "Apr 19", kit: "Artisan Cake", status: "Delivered" },
+  { name: "Sara Greco", moment: "Milestone · 5y", date: "Apr 28", kit: "Experience Gift", status: "Scheduled" },
 ];
 
 const statusStyle: Record<string, string> = {
   Scheduled: "bg-accent/15 text-accent border border-accent/30",
+  "In delivery": "bg-amber-500/15 text-amber-400 border border-amber-500/30",
   Delivered: "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30",
-  Pending: "bg-amber-500/15 text-amber-400 border border-amber-500/30",
 };
 
 const DashboardMock = () => {
@@ -26,7 +25,7 @@ const DashboardMock = () => {
             <span className="size-2.5 rounded-full bg-muted-foreground/30" />
             <span className="size-2.5 rounded-full bg-muted-foreground/30" />
           </div>
-          <span className="text-xs font-medium text-muted-foreground">remvy.app · upcoming moments</span>
+          <span className="text-xs font-medium text-muted-foreground">remvy.app · upcoming moments &amp; delivery</span>
           <span className="text-[11px] font-medium text-accent">● Live</span>
         </div>
 

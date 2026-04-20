@@ -12,6 +12,7 @@ const Nav = () => {
           {[
             ["How it works", "#how"],
             ["Moments", "#moments"],
+            ["Packages", "#packages"],
             ["Integrations", "#integrations"],
             ["Pilot", "#cta"],
           ].map(([label, href]) => (

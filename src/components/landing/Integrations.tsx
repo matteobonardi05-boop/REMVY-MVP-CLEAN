@@ -15,10 +15,11 @@ const Integrations = () => {
       <div className="mx-auto w-full max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground lg:text-5xl">
-            Plugs into the tools you already use.
+            Built to work with the tools you already use.
           </h2>
           <p className="mt-5 text-base text-muted-foreground">
-            No migration. No disruption. No new software to learn.
+            Remvy connects to HR software, payroll, spreadsheets, Slack and email — no migration, no
+            disruption. It fits your existing workflow.
           </p>
         </div>
 

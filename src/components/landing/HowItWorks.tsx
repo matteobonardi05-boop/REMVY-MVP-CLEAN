@@ -1,18 +1,18 @@
 const steps = [
   {
     n: 1,
-    title: "Import your people",
-    body: "Connect your HRIS, upload a CSV or paste a spreadsheet. Remvy maps birthdays, anniversaries and key dates automatically.",
+    title: "Import employee data",
+    body: "Connect your HR software, upload a CSV or paste a spreadsheet. Remvy maps birthdays, anniversaries and key dates automatically.",
   },
   {
     n: 2,
-    title: "Configure your moments",
-    body: "Define what happens for each moment type: which kit, what budget, what message. Set it once, apply to everyone.",
+    title: "Configure moments, budgets and rules",
+    body: "Define gifting rules per role, seniority and event type. Set budgets, kits and messages once — Remvy applies them automatically.",
   },
   {
     n: 3,
-    title: "Remvy executes",
-    body: "From ordering the gift to delivery tracking and employee feedback — fully automated, fully documented.",
+    title: "Remvy executes everything",
+    body: "Gift sourcing, ordering, delivery, tracking and employee feedback — fully handled, fully documented.",
   },
 ];
 
@@ -24,6 +24,9 @@ const HowItWorks = () => {
           <h2 className="font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground lg:text-5xl">
             Set it once. Remvy handles the rest.
           </h2>
+          <p className="mt-5 text-base text-muted-foreground">
+            No coordination. No last-minute orders. No missed moments.
+          </p>
         </div>
 
         <div className="relative mt-16">
