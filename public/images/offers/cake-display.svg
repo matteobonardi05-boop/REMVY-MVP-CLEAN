@@ -1,0 +1,39 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="url(#bg)"/>
+  <ellipse cx="596" cy="700" rx="308" ry="74" fill="#B56E3B" fill-opacity="0.12"/>
+  <ellipse cx="596" cy="676" rx="270" ry="56" fill="#C88951" fill-opacity="0.16"/>
+  <path d="M364 614C364 534.471 428.471 470 508 470H684C763.529 470 828 534.471 828 614V630H364V614Z" fill="url(#cakeBase)"/>
+  <rect x="336" y="630" width="520" height="62" rx="31" fill="#FFF2E4"/>
+  <path d="M430 522C440 556 448 582 438 624" stroke="#F4D1A6" stroke-width="24" stroke-linecap="round"/>
+  <path d="M526 510C540 548 546 586 532 626" stroke="#F4D1A6" stroke-width="24" stroke-linecap="round"/>
+  <path d="M620 506C636 550 642 586 628 626" stroke="#F4D1A6" stroke-width="24" stroke-linecap="round"/>
+  <path d="M714 522C728 560 734 590 720 624" stroke="#F4D1A6" stroke-width="24" stroke-linecap="round"/>
+  <rect x="430" y="414" width="336" height="92" rx="44" fill="#FFF9F2"/>
+  <path d="M454 456C492 420 536 402 596 402C658 402 704 420 740 456" stroke="#E6B479" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="478" cy="452" r="18" fill="#F0A4A6"/>
+  <circle cx="534" cy="438" r="18" fill="#F3C577"/>
+  <circle cx="596" cy="430" r="20" fill="#F0A4A6"/>
+  <circle cx="658" cy="438" r="18" fill="#F3C577"/>
+  <circle cx="714" cy="452" r="18" fill="#F0A4A6"/>
+  <rect x="578" y="326" width="36" height="92" rx="18" fill="#FFDA77"/>
+  <path d="M596 286C620 314 624 340 596 360C568 340 572 314 596 286Z" fill="#FF8A65"/>
+  <rect x="220" y="182" width="248" height="164" rx="28" fill="#FFFFFF" fill-opacity="0.55"/>
+  <path d="M260 250H422" stroke="#A36A45" stroke-width="16" stroke-linecap="round"/>
+  <path d="M260 288H378" stroke="#C88951" stroke-width="16" stroke-linecap="round"/>
+  <path d="M260 326H340" stroke="#D6A276" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="890" cy="246" r="110" fill="#FFFFFF" fill-opacity="0.5"/>
+  <path d="M836 252C854 224 878 210 914 212C940 214 962 228 976 248" stroke="#E19E61" stroke-width="18" stroke-linecap="round"/>
+  <path d="M852 286C880 314 926 316 954 286" stroke="#E19E61" stroke-width="18" stroke-linecap="round"/>
+  <path d="M338 690H858" stroke="#B7703D" stroke-width="16" stroke-linecap="round" opacity="0.35"/>
+  <defs>
+    <linearGradient id="bg" x1="170" y1="90" x2="1008" y2="832" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1E5"/>
+      <stop offset="0.45" stop-color="#F8D4AF"/>
+      <stop offset="1" stop-color="#E5A86C"/>
+    </linearGradient>
+    <linearGradient id="cakeBase" x1="412" y1="502" x2="790" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3C089"/>
+      <stop offset="1" stop-color="#D6834A"/>
+    </linearGradient>
+  </defs>
+</svg>

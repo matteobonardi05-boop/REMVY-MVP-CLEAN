@@ -5,15 +5,16 @@ const Nav = () => {
     <header className="sticky top-0 z-30 w-full border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <nav className="mx-auto flex w-full max-w-[1240px] items-center justify-between px-6 py-4 lg:px-10">
         <a href="#top" aria-label="Remvy home">
-          <Wordmark />
+          <Wordmark size={34} />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
           {[
-            ["How it works", "#how"],
-            ["Moments", "#moments"],
-            ["Packages", "#packages"],
+            ["Playbook", "#playbook"],
+            ["What we offer", "#packages"],
             ["Integrations", "#integrations"],
+            ["Operating system", "#why"],
+            ["How it works", "#how"],
             ["Pilot", "#cta"],
           ].map(([label, href]) => (
             <a

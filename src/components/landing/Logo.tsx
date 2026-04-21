@@ -34,9 +34,15 @@ const Logo = ({ size = 24 }: { size?: number }) => {
 };
 
 export const Wordmark = ({ size = 24 }: { size?: number }) => (
-  <div className="flex items-center gap-2.5">
+  <div className="flex items-center gap-3">
     <Logo size={size} />
-    <span className="font-display text-lg font-extrabold tracking-tight text-foreground">Remvy</span>
+    <span
+      className={`font-display font-extrabold tracking-tight text-foreground ${
+        size >= 34 ? "text-[1.45rem]" : size >= 28 ? "text-xl" : "text-lg"
+      }`}
+    >
+      Remvy
+    </span>
   </div>
 );
 

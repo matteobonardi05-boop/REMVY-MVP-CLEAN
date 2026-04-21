@@ -2,37 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Remvy Design System — Algorithmic Precision
-   All colors MUST be HSL. Premium minimal SaaS, navy + electric cyan.
+/* Remvy Design System
+   All colors MUST be HSL. Warm premium, deep espresso + champagne glow.
 */
 
 @layer base {
   :root {
-    /* Remvy dark theme — midnight navy + cyan glow */
-    --background: 222 44% 8%;            /* #0B0F1C */
-    --foreground: 0 0% 100%;
+    --background: 22 28% 9%;
+    --foreground: 34 40% 96%;
 
-    --surface: 222 39% 11%;              /* slightly lifted surface */
-    --surface-muted: 222 35% 14%;
+    --surface: 24 24% 12%;
+    --surface-muted: 24 19% 16%;
 
-    --card: 220 39% 12%;                 /* #111827 */
-    --card-foreground: 0 0% 100%;
+    --card: 26 23% 13%;
+    --card-foreground: 34 40% 96%;
 
-    --popover: 220 39% 12%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 26 23% 13%;
+    --popover-foreground: 34 40% 96%;
 
-    --primary: 199 89% 60%;              /* #38BDF8 cyan */
-    --primary-foreground: 222 44% 8%;
+    --primary: 32 79% 70%;
+    --primary-foreground: 24 30% 11%;
 
-    --secondary: 220 26% 18%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 22 18% 18%;
+    --secondary-foreground: 34 40% 96%;
 
-    --muted: 220 26% 16%;
-    --muted-foreground: 215 20% 65%;     /* #94A3B8 */
+    --muted: 23 16% 18%;
+    --muted-foreground: 29 20% 72%;
 
-    --accent: 199 89% 60%;               /* cyan accent */
-    --accent-foreground: 222 44% 8%;
-    --accent-glow: 199 95% 70%;
+    --accent: 32 79% 70%;
+    --accent-foreground: 24 30% 11%;
+    --accent-glow: 35 88% 79%;
 
     --success: 142 71% 45%;
     --warning: 41 96% 56%;
@@ -40,22 +39,22 @@
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 18%;               /* #1E293B */
-    --border-strong: 217 33% 26%;
-    --input: 217 33% 18%;
-    --ring: 199 89% 60%;
+    --border: 26 16% 22%;
+    --border-strong: 28 19% 30%;
+    --input: 26 16% 22%;
+    --ring: 32 79% 70%;
 
-    --radius: 1rem;                      /* 16px */
+    --radius: 1rem;
 
-    --grid-line: 199 89% 60%;
+    --grid-line: 32 65% 70%;
 
-    --shadow-elegant: 0 30px 80px -20px hsl(var(--accent) / 0.35);
-    --shadow-soft: 0 4px 24px 0 hsl(220 60% 4% / 0.5);
-    --shadow-cta: 0 8px 32px -4px hsl(var(--accent) / 0.5);
-    --shadow-glow: 0 0 60px -10px hsl(var(--accent) / 0.45);
+    --shadow-elegant: 0 34px 96px -28px hsl(18 52% 4% / 0.7);
+    --shadow-soft: 0 8px 30px -12px hsl(18 45% 5% / 0.55);
+    --shadow-cta: 0 12px 36px -8px hsl(var(--accent) / 0.42);
+    --shadow-glow: 0 0 70px -18px hsl(var(--accent) / 0.5);
 
     --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--accent) / 0.22), transparent 60%);
-    --gradient-cta: linear-gradient(180deg, hsl(220 39% 12% / 0), hsl(var(--accent) / 0.12));
+    --gradient-cta: linear-gradient(180deg, hsl(26 23% 13% / 0), hsl(var(--accent) / 0.14));
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -79,13 +78,17 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: "DM Sans", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    background-image:
+      radial-gradient(circle at top, hsl(var(--accent) / 0.08), transparent 34%),
+      radial-gradient(circle at 85% 10%, hsl(12 70% 72% / 0.08), transparent 24%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Urbanist', 'DM Sans', sans-serif;
+    font-family: "Urbanist", "DM Sans", sans-serif;
     @apply tracking-tight;
   }
 
@@ -97,7 +100,7 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Urbanist', 'DM Sans', sans-serif;
+    font-family: "Urbanist", "DM Sans", sans-serif;
   }
 
   .bg-grid {
@@ -125,6 +128,6 @@
   }
 
   .text-glow {
-    text-shadow: 0 0 24px hsl(var(--accent) / 0.5);
+    text-shadow: 0 0 24px hsl(var(--accent) / 0.45);
   }
 }
