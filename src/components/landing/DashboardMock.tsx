@@ -1,3 +1,11 @@
+import {
+  BriefcaseBusiness,
+  CakeSlice,
+  Flower2,
+  Gift,
+  Sparkles,
+} from "lucide-react";
+
 import Logo from "./Logo";
 
 const rows = [
@@ -13,10 +21,10 @@ const rows = [
 ];
 
 const plannedVsDelivered = [
-  { label: "W1", planned: 6, delivered: 5 },
-  { label: "W2", planned: 8, delivered: 7 },
-  { label: "W3", planned: 5, delivered: 5 },
-  { label: "W4", planned: 9, delivered: 8 },
+  { label: "W1", planned: 4, delivered: 3 },
+  { label: "W2", planned: 5, delivered: 4 },
+  { label: "W3", planned: 6, delivered: 5 },
+  { label: "W4", planned: 7, delivered: 6 },
 ];
 
 const satisfaction = [
@@ -30,6 +38,62 @@ const statusStyle: Record<string, string> = {
   "In delivery": "border border-amber-500/30 bg-amber-500/15 text-amber-300",
   Delivered: "border border-emerald-500/25 bg-emerald-500/12 text-emerald-300",
 };
+
+const eventStyle: Record<
+  string,
+  { icon: typeof CakeSlice; iconClass: string; badgeClass: string }
+> = {
+  Birthday: {
+    icon: CakeSlice,
+    iconClass: "text-rose-500",
+    badgeClass: "bg-rose-100/80 border-rose-200/80",
+  },
+  Onboarding: {
+    icon: BriefcaseBusiness,
+    iconClass: "text-sky-600",
+    badgeClass: "bg-sky-100/80 border-sky-200/80",
+  },
+  "Work anniversary": {
+    icon: Sparkles,
+    iconClass: "text-amber-500",
+    badgeClass: "bg-amber-100/80 border-amber-200/80",
+  },
+  Promotion: {
+    icon: Gift,
+    iconClass: "text-violet-600",
+    badgeClass: "bg-violet-100/80 border-violet-200/80",
+  },
+  Milestone: {
+    icon: Sparkles,
+    iconClass: "text-orange-500",
+    badgeClass: "bg-orange-100/80 border-orange-200/80",
+  },
+  "New baby": {
+    icon: Flower2,
+    iconClass: "text-emerald-600",
+    badgeClass: "bg-emerald-100/80 border-emerald-200/80",
+  },
+};
+
+const calendarDays = [
+  null,
+  null,
+  ...Array.from({ length: 30 }, (_, index) => index + 1),
+];
+
+const eventByDay = Object.fromEntries(
+  rows.map((row) => {
+    const day = Number(row.date.split(" ")[1]);
+    const eventKey =
+      row.moment.startsWith("Work anniversary")
+        ? "Work anniversary"
+        : row.moment.startsWith("Milestone")
+          ? "Milestone"
+          : row.moment;
+
+    return [day, { ...row, eventKey }];
+  }),
+);
 
 const DashboardMock = () => {
   return (
@@ -63,7 +127,7 @@ const DashboardMock = () => {
           <div className="border-b border-border xl:border-b-0 xl:border-r">
             <div className="grid gap-3 border-b border-border/80 bg-[linear-gradient(180deg,hsl(var(--accent)/0.08),transparent)] px-5 py-5 md:grid-cols-3">
               {[
-                { value: "24", label: "Moments in motion" },
+                { value: "9", label: "Active moments" },
                 { value: "98%", label: "On-time delivery" },
                 { value: "4.8 / 5", label: "Employee sentiment" },
               ].map((item) => (
@@ -115,37 +179,50 @@ const DashboardMock = () => {
 
           <div className="grid gap-0 sm:grid-cols-2 xl:grid-cols-1">
             <div className="border-b border-border p-5 sm:border-r xl:border-r-0">
-              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                Monthly visibility
-              </p>
-              <div className="mt-5 flex h-28 items-end gap-2">
-                {plannedVsDelivered.map((bar) => (
-                  <div key={bar.label} className="flex flex-1 flex-col items-center gap-2">
-                    <div className="relative flex h-24 w-full items-end justify-center">
-                      <div
-                        className="absolute bottom-0 w-7 rounded-t-xl bg-accent/20"
-                        style={{ height: `${bar.planned * 10}%` }}
-                      />
-                      <div
-                        className="absolute bottom-0 w-7 rounded-t-xl bg-accent shadow-[0_0_14px_hsl(var(--accent)/0.45)]"
-                        style={{ height: `${bar.delivered * 10}%` }}
-                      />
-                    </div>
-                    <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                      {bar.label}
-                    </span>
-                  </div>
-                ))}
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  April calendar
+                </p>
+                <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-accent">
+                  Event view
+                </span>
               </div>
-              <div className="mt-4 flex items-center gap-4 text-[11px] text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5">
-                  <span className="size-2 rounded-sm bg-accent" />
-                  Delivered
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <span className="size-2 rounded-sm bg-accent/20" />
-                  Planned
-                </span>
+              <div className="mt-4 grid grid-cols-7 gap-1.5 text-center">
+                {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => (
+                  <span key={day} className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                    {day}
+                  </span>
+                ))}
+                {calendarDays.map((day, index) => {
+                  if (!day) {
+                    return <div key={`empty-${index}`} className="h-12 rounded-xl bg-transparent" />;
+                  }
+
+                  const event = eventByDay[day as number];
+                  const style = event ? eventStyle[event.eventKey] : null;
+                  const EventIcon = style?.icon;
+
+                  return (
+                    <div
+                      key={day}
+                      className={`relative flex h-12 flex-col justify-between rounded-xl border px-1.5 py-1 ${
+                        event ? "border-accent/25 bg-background/45 shadow-soft" : "border-border/70 bg-background/20"
+                      }`}
+                    >
+                      <span className="text-[10px] font-medium text-foreground/90">{day}</span>
+                      {event && EventIcon ? (
+                        <div className="flex items-end justify-between gap-1">
+                          <span className="text-[8px] font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                            {event.name.split(" ").map((part: string) => part[0]).join("")}
+                          </span>
+                          <span className={`inline-flex size-5 items-center justify-center rounded-full border ${style.badgeClass}`}>
+                            <EventIcon className={`size-3 ${style.iconClass}`} strokeWidth={1.8} />
+                          </span>
+                        </div>
+                      ) : null}
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -199,9 +276,9 @@ const DashboardMock = () => {
                 ))}
               </div>
               <div className="mt-5 rounded-2xl border border-border bg-background/30 p-4">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border-strong bg-card/70 px-3 py-1.5">
-                  <Logo size={18} />
-                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-foreground/88">
+                <div className="mb-3 inline-flex items-center gap-2.5 rounded-full border border-border-strong bg-card/70 px-3.5 py-2">
+                  <Logo size={28} />
+                  <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-foreground/88">
                     Remvy visibility
                   </span>
                 </div>

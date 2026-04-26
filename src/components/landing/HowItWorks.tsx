@@ -31,7 +31,8 @@ const HowItWorks = () => {
               Set it once
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-              Set it once. <span className="text-accent text-glow">Remvy handles the rest.</span>
+              <span className="block">Set it once.</span>
+              <span className="mt-2 block text-accent text-glow">Remvy handles the rest.</span>
             </h2>
             <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
               From planning to delivery, the process becomes repeatable, visible and much easier to

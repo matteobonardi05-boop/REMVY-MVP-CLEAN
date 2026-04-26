@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360" fill="none">
+  <defs>
+    <linearGradient id="remvy-wordmark" x1="255" y1="72" x2="1030" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF7ED" />
+      <stop offset="0.52" stop-color="#F2E4D4" />
+      <stop offset="1" stop-color="#D8C4AE" />
+    </linearGradient>
+    <linearGradient id="remvy-tagline" x1="265" y1="198" x2="1020" y2="252" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C7B8A7" />
+      <stop offset="1" stop-color="#A79480" />
+    </linearGradient>
+    <linearGradient id="remvy-accent" x1="0" y1="0" x2="220" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFBE86" />
+      <stop offset="1" stop-color="#D98A4E" />
+    </linearGradient>
+    <filter id="warm-glow" x="-40" y="-40" width="1480" height="440" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#FFAD6A" flood-opacity="0.18" />
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#F6E7D7" flood-opacity="0.24" />
+    </filter>
+    <filter id="soft-shadow" x="0" y="0" width="1400" height="360" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#150D08" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <g filter="url(#warm-glow)">
+    <image href="logo.svg" x="44" y="58" width="176" height="176" preserveAspectRatio="xMidYMid meet" />
+  </g>
+
+  <g filter="url(#soft-shadow)">
+    <rect x="264" y="62" width="228" height="12" rx="6" fill="url(#remvy-accent)" fill-opacity="0.9" />
+    <text
+      x="262"
+      y="176"
+      fill="url(#remvy-wordmark)"
+      font-family="'Jost', 'DM Sans', 'Urbanist', Arial, sans-serif"
+      font-size="116"
+      font-weight="800"
+      letter-spacing="14"
+    >
+      REMVY
+    </text>
+    <text
+      x="266"
+      y="234"
+      fill="url(#remvy-tagline)"
+      font-family="'Jost', 'DM Sans', 'Urbanist', Arial, sans-serif"
+      font-size="34"
+      font-weight="600"
+      letter-spacing="1.2"
+    >
+      Recognition for every moment that matters.
+    </text>
+  </g>
+</svg>

@@ -39,11 +39,13 @@ const YouDefine = () => {
               Your recognition playbook
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-              You define the moment. <span className="text-accent text-glow">We handle everything else.</span>
+              <span className="block">You define the moment.</span>
+              <span className="mt-2 block text-accent text-glow">We handle everything.</span>
             </h2>
             <p className="mt-5 max-w-[60ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
               Set the standards once, then let Remvy execute with the same level of care every time.
-              No spreadsheet choreography, no follow-up chaos, no reinvention for each moment.
+              No spreadsheet choreography, no follow-up chaos, no reinvention for each moment. This is
+              how employee experience scales and internal culture becomes visible in day-to-day work life.
             </p>
           </div>
 
@@ -61,6 +63,7 @@ const YouDefine = () => {
                   "Budget per moment and audience",
                   "Gift categories, tiers and style",
                   "Rules by role, office or milestone",
+                  "Notification timing and approval windows",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-2xl border border-border bg-background/30 px-4 py-3">
                     <span className="mt-0.5 inline-flex size-5 items-center justify-center rounded-full bg-accent/15 text-accent">
@@ -69,6 +72,20 @@ const YouDefine = () => {
                     <p className="text-sm leading-relaxed text-foreground/88">{item}</p>
                   </div>
                 ))}
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-border bg-background/35 p-4">
+                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-accent">
+                  Approval notifications
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Remvy can send customizable push notifications 7, 5 and 2 days before delivery to
+                  confirm or adjust each order according to your personalization rules.
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/88">
+                  Two days before delivery is the last window to edit or cancel. After that, the order
+                  is confirmed.
+                </p>
               </div>
             </div>
           </div>

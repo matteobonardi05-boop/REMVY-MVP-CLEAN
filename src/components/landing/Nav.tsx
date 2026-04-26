@@ -5,7 +5,7 @@ const Nav = () => {
     <header className="sticky top-0 z-30 w-full border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <nav className="mx-auto flex w-full max-w-[1240px] items-center justify-between px-6 py-4 lg:px-10">
         <a href="#top" aria-label="Remvy home">
-          <Wordmark size={34} />
+          <Wordmark size={46} />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

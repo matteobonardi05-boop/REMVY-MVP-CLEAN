@@ -1,47 +1,29 @@
-const Logo = ({ size = 24 }: { size?: number }) => {
-  const id = "remvy-glow";
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <defs>
-        <radialGradient id={id} cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="1" />
-          <stop offset="60%" stopColor="hsl(var(--accent))" stopOpacity="0.4" />
-          <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0" />
-        </radialGradient>
-        <linearGradient id={`${id}-trail`} x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0%" stopColor="hsl(var(--accent))" stopOpacity="0" />
-          <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0.9" />
-        </linearGradient>
-      </defs>
-      {/* Trail */}
-      <rect x="15" y="14" width="2" height="14" rx="1" fill={`url(#${id}-trail)`} />
-      {/* Ring */}
-      <circle cx="16" cy="18" r="6" stroke="hsl(var(--accent))" strokeWidth="1.5" opacity="0.8" />
-      {/* Glow halo */}
-      <circle cx="16" cy="6" r="8" fill={`url(#${id})`} />
-      {/* Luminous dot breaking free above */}
-      <circle cx="16" cy="6" r="2.5" fill="hsl(var(--accent))" />
-      <circle cx="16" cy="6" r="1.2" fill="white" />
-    </svg>
-  );
-};
+const Logo = ({ size = 24 }: { size?: number }) => (
+  <img
+    src="/logo.svg"
+    alt="Remvy logo"
+    style={{ height: `${size}px` }}
+    className="block w-auto object-contain"
+  />
+);
 
 export const Wordmark = ({ size = 24 }: { size?: number }) => (
-  <div className="flex items-center gap-3">
+  <div className={`${size >= 44 ? "gap-4" : "gap-3"} flex items-center`}>
     <Logo size={size} />
     <span
-      className={`font-display font-extrabold tracking-tight text-foreground ${
-        size >= 34 ? "text-[1.45rem]" : size >= 28 ? "text-xl" : "text-lg"
+      className={`font-display font-extrabold tracking-[0.14em] text-foreground ${
+        size >= 52
+          ? "text-[1.72rem]"
+          : size >= 44
+            ? "text-[1.52rem]"
+            : size >= 34
+              ? "text-[1.38rem]"
+              : size >= 28
+                ? "text-[1.1rem]"
+                : "text-base"
       }`}
     >
-      Remvy
+      REMVY
     </span>
   </div>
 );

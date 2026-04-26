@@ -49,7 +49,8 @@ const WhyRemvy = () => {
             </h2>
             <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
               Most alternatives cover one slice of the process. Remvy connects the data, applies the
-              rules, sources the gifts and handles the execution in the real world.
+              rules, sources the gifts and handles the execution in the real world. That makes employee
+              experience more consistent and internal culture much more visible at scale.
             </p>
           </div>
 
@@ -61,7 +62,7 @@ const WhyRemvy = () => {
               {[
                 ["One workflow", "Rules, sourcing and delivery live in one system."],
                 ["Less admin", "No more manual coordination across teams."],
-                ["Better consistency", "Every moment follows the same quality standard."],
+                ["Stronger culture", "Important moments feel consistent, visible and intentional."],
               ].map(([title, copy]) => (
                 <div key={title} className="rounded-2xl border border-border bg-background/35 p-4">
                   <p className="font-display text-lg font-bold text-foreground">{title}</p>

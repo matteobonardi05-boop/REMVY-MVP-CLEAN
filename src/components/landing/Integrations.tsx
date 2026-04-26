@@ -1,27 +1,14 @@
-import {
-  ArrowRight,
-  BarChart3,
-  Building2,
-  Gift,
-  Mail,
-  MessageSquare,
-  Sheet,
-  Table2,
-  Truck,
-  Users,
-  Wallet,
-} from "lucide-react";
+import { ArrowRight, BarChart3, Gift, Truck } from "lucide-react";
 
 import Logo from "./Logo";
 
 const tools = [
-  { name: "Factorial", icon: Users },
-  { name: "Personio", icon: Building2 },
-  { name: "Payroll", icon: Wallet },
-  { name: "Google Sheets", icon: Sheet },
-  { name: "Excel", icon: Table2 },
-  { name: "Slack", icon: MessageSquare },
-  { name: "Email", icon: Mail },
+  { name: "Factorial", mark: "f", brandClass: "text-[#7C5CFF]", tileClass: "bg-[#F4F0FF] border-[#DDD1FF]" },
+  { name: "Zucchetti", mark: "Z", brandClass: "text-[#E53935]", tileClass: "bg-[#FFF1F0] border-[#FFD2D0]" },
+  { name: "Peoplelink", mark: "P", brandClass: "text-[#0EA5E9]", tileClass: "bg-[#EEF9FF] border-[#CAEFFF]" },
+  { name: "Bizneo HR", mark: "B", brandClass: "text-[#1D4ED8]", tileClass: "bg-[#EEF4FF] border-[#D3E1FF]" },
+  { name: "TeamSystem", mark: "T", brandClass: "text-[#00A85A]", tileClass: "bg-[#ECFFF5] border-[#C9F3DD]" },
+  { name: "SAP", mark: "SAP", brandClass: "text-[#0F6CBD]", tileClass: "bg-[#EFF8FF] border-[#CBE9FF]" },
 ];
 
 const outputs = [
@@ -45,11 +32,11 @@ const Integrations = () => {
               Integrations
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-              Built to work with the tools you already use.
+              <span className="text-accent text-glow">Built to work</span> with the tools you already use.
             </h2>
             <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
-              Remvy connects with HR software, payroll, spreadsheets, Slack and email. No migration.
-              No disruption. Just a smoother way to operationalize recognition.
+              Remvy fits into the HR tools companies already rely on, so recognition can become part of
+              the workflow instead of another separate system to manage.
             </p>
           </div>
 
@@ -79,13 +66,17 @@ const Integrations = () => {
                 Your stack
               </p>
               <div className="grid grid-cols-2 gap-2.5">
-                {tools.map(({ name, icon: Icon }) => (
+                {tools.map((tool) => (
                   <div
-                    key={name}
-                    className="flex items-center gap-2 rounded-xl border border-border bg-surface/60 px-3 py-3"
+                    key={tool.name}
+                    className="flex items-center gap-3 rounded-xl border border-border bg-surface/60 px-3 py-3"
                   >
-                    <Icon className="size-4 text-accent" strokeWidth={1.5} />
-                    <span className="text-xs font-medium text-foreground">{name}</span>
+                    <span
+                      className={`inline-flex h-9 min-w-9 items-center justify-center rounded-lg border px-2 font-display text-xs font-extrabold uppercase tracking-[0.12em] ${tool.brandClass} ${tool.tileClass}`}
+                    >
+                      {tool.mark}
+                    </span>
+                    <span className="text-xs font-semibold text-foreground">{tool.name}</span>
                   </div>
                 ))}
               </div>
@@ -100,8 +91,8 @@ const Integrations = () => {
                 className="absolute inset-0 -z-10 rounded-[28px] bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)/0.18),transparent_70%)]"
                 aria-hidden
               />
-              <div className="mx-auto flex size-16 items-center justify-center rounded-2xl border border-accent/40 bg-accent/10">
-                <Logo size={30} />
+              <div className="mx-auto flex size-20 items-center justify-center rounded-2xl border border-accent/40 bg-accent/10">
+                <Logo size={46} />
               </div>
               <p className="mt-4 font-display text-xl font-extrabold text-foreground">Remvy</p>
               <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
@@ -133,7 +124,7 @@ const Integrations = () => {
         </div>
 
         <p className="mt-12 text-center text-sm text-muted-foreground">
-          Do not see your tool? Remvy also works with CSV upload or manual import.
+          If you do not see your tool here, Remvy also works with CSV upload or manual import.
         </p>
       </div>
     </section>
