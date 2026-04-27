@@ -6,6 +6,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import { useIsItalian } from "@/lib/locale";
 import Logo from "./Logo";
 
 const rows = [
@@ -96,6 +97,8 @@ const eventByDay = Object.fromEntries(
 );
 
 const DashboardMock = () => {
+  const isItalian = useIsItalian();
+
   return (
     <div className="relative">
       <div
@@ -116,10 +119,12 @@ const DashboardMock = () => {
             <span className="size-2.5 rounded-full bg-muted-foreground/30" />
           </div>
           <span className="text-xs font-medium text-muted-foreground">
-            remvy dashboard - where you can personalize moments and track budget, delivery and feedback
+            {isItalian
+              ? "remvy dashboard - personalizzi i momenti e monitori budget, delivery e feedback"
+              : "remvy dashboard - where you can personalize moments and track budget, delivery and feedback"}
           </span>
           <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-            Live operations
+            {isItalian ? "Live operations" : "Live operations"}
           </span>
         </div>
 
@@ -127,9 +132,9 @@ const DashboardMock = () => {
           <div className="border-b border-border xl:border-b-0 xl:border-r">
             <div className="grid gap-3 border-b border-border/80 bg-[linear-gradient(180deg,hsl(var(--accent)/0.08),transparent)] px-5 py-5 md:grid-cols-3">
               {[
-                { value: "9", label: "Active moments" },
-                { value: "98%", label: "On-time delivery" },
-                { value: "4.8 / 5", label: "Employee sentiment" },
+                { value: "9", label: isItalian ? "Momenti attivi" : "Active moments" },
+                { value: "98%", label: isItalian ? "Delivery puntuali" : "On-time delivery" },
+                { value: "4.8 / 5", label: isItalian ? "Employee sentiment" : "Employee sentiment" },
               ].map((item) => (
                 <div key={item.label} className="rounded-2xl border border-border bg-background/35 px-4 py-4">
                   <div className="font-display text-3xl font-bold leading-none text-foreground">{item.value}</div>
@@ -144,11 +149,11 @@ const DashboardMock = () => {
               <table className="w-full text-left text-sm">
                 <thead>
                   <tr className="border-b border-border text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                    <th className="px-5 py-3 font-medium">Employee</th>
-                    <th className="px-5 py-3 font-medium">Moment</th>
-                    <th className="px-5 py-3 font-medium">Date</th>
-                    <th className="hidden px-5 py-3 font-medium sm:table-cell">Gift mix</th>
-                    <th className="px-5 py-3 font-medium">Status</th>
+                    <th className="px-5 py-3 font-medium">{isItalian ? "Employee" : "Employee"}</th>
+                    <th className="px-5 py-3 font-medium">{isItalian ? "Momento" : "Moment"}</th>
+                    <th className="px-5 py-3 font-medium">{isItalian ? "Data" : "Date"}</th>
+                    <th className="hidden px-5 py-3 font-medium sm:table-cell">{isItalian ? "Gift mix" : "Gift mix"}</th>
+                    <th className="px-5 py-3 font-medium">{isItalian ? "Status" : "Status"}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -181,10 +186,10 @@ const DashboardMock = () => {
             <div className="border-b border-border p-5 sm:border-r xl:border-r-0">
               <div className="flex items-center justify-between gap-3">
                 <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                  April calendar
+                  {isItalian ? "Calendario aprile" : "April calendar"}
                 </p>
                 <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-accent">
-                  Event view
+                  {isItalian ? "Event view" : "Event view"}
                 </span>
               </div>
               <div className="mt-4 grid grid-cols-7 gap-1.5 text-center">
@@ -228,11 +233,11 @@ const DashboardMock = () => {
 
             <div className="border-b border-border p-5 xl:border-b">
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                Budget control
+                  {isItalian ? "Budget control" : "Budget control"}
               </p>
               <div className="mt-4 flex items-end gap-2">
                 <span className="font-display text-3xl font-bold text-foreground">EUR 840</span>
-                <span className="pb-1 text-sm text-muted-foreground">of EUR 1,200</span>
+                <span className="pb-1 text-sm text-muted-foreground">{isItalian ? "su EUR 1,200" : "of EUR 1,200"}</span>
               </div>
               <div className="mt-5 h-2.5 w-full overflow-hidden rounded-full bg-surface">
                 <div
@@ -241,11 +246,11 @@ const DashboardMock = () => {
                 />
               </div>
               <div className="mt-3 flex justify-between text-[11px] text-muted-foreground">
-                <span>70% used</span>
-                <span>EUR 360 remaining</span>
+                <span>{isItalian ? "70% utilizzato" : "70% used"}</span>
+                <span>{isItalian ? "EUR 360 disponibili" : "EUR 360 remaining"}</span>
               </div>
               <div className="mt-5 grid grid-cols-3 gap-2">
-                {["Gifts", "Logistics", "Cards"].map((label) => (
+                {(isItalian ? ["Gift", "Logistica", "Card"] : ["Gifts", "Logistics", "Cards"]).map((label) => (
                   <div key={label} className="rounded-xl border border-border bg-background/30 px-3 py-3 text-center">
                     <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
                       {label}
@@ -257,7 +262,7 @@ const DashboardMock = () => {
 
             <div className="p-5 sm:col-span-2 xl:col-span-1">
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                Satisfaction by moment
+                {isItalian ? "Soddisfazione per momento" : "Satisfaction by moment"}
               </p>
               <div className="mt-4 space-y-4">
                 {satisfaction.map((item) => (
@@ -279,14 +284,16 @@ const DashboardMock = () => {
                 <div className="mb-3 inline-flex items-center gap-2.5 rounded-full border border-border-strong bg-card/70 px-3.5 py-2">
                   <Logo size={28} />
                   <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-foreground/88">
-                    Remvy visibility
+                    {isItalian ? "Remvy visibility" : "Remvy visibility"}
                   </span>
                 </div>
                 <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-accent">
-                  Full visibility in one view
+                  {isItalian ? "Visibilita completa in una vista" : "Full visibility in one view"}
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Moments, budget, logistics and sentiment are visible in the same operating dashboard.
+                  {isItalian
+                    ? "Momenti, budget, logistica e sentiment sono visibili nella stessa dashboard operativa."
+                    : "Moments, budget, logistics and sentiment are visible in the same operating dashboard."}
                 </p>
               </div>
             </div>

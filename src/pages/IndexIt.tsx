@@ -9,7 +9,7 @@ import HowItWorks from "@/components/landing/HowItWorks";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 
-const Index = () => {
+const IndexIt = () => {
   return (
     <main className="min-h-screen bg-background">
       <Nav />
@@ -26,4 +26,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default IndexIt;

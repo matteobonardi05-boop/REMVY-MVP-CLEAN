@@ -1,5 +1,6 @@
 import { ArrowRight, BarChart3, Gift, Truck } from "lucide-react";
 
+import { useIsItalian } from "@/lib/locale";
 import Logo from "./Logo";
 
 const tools = [
@@ -18,6 +19,8 @@ const outputs = [
 ];
 
 const Integrations = () => {
+  const isItalian = useIsItalian();
+
   return (
     <section id="integrations" className="relative border-t border-border bg-surface/30">
       <div
@@ -29,27 +32,35 @@ const Integrations = () => {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-end">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full border border-border-strong bg-card/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Integrations
+              {isItalian ? "Integrazioni" : "Integrations"}
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-              <span className="text-accent text-glow">Built to work</span> with the tools you already use.
+              <span className="text-accent text-glow">{isItalian ? "Built to work" : "Built to work"}</span>{" "}
+              {isItalian ? "con gli strumenti che usi gia." : "with the tools you already use."}
             </h2>
             <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
-              Remvy fits into the HR tools companies already rely on, so recognition can become part of
-              the workflow instead of another separate system to manage.
+              {isItalian
+                ? "Remvy si integra con gli HR tools che l'azienda usa gia, cosi la recognition entra nel workflow invece di diventare un altro sistema da gestire."
+                : "Remvy fits into the HR tools companies already rely on, so recognition can become part of the workflow instead of another separate system to manage."}
             </p>
           </div>
 
           <div className="rounded-[28px] border border-border-strong bg-card/90 p-6 shadow-soft">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-              Integration principle
+              {isItalian ? "Principio di integrazione" : "Integration principle"}
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              {[
-                ["No new stack", "Works with your current systems and manual files."],
-                ["Flexible input", "HRIS, payroll, spreadsheets or CSV import."],
-                ["Real-world output", "From data to sourcing, delivery and tracking."],
-              ].map(([title, copy]) => (
+              {(isItalian
+                ? [
+                    ["Nessun nuovo stack", "Funziona con sistemi attuali, file manuali e CSV."],
+                    ["Input flessibile", "HRIS, payroll, spreadsheet o import CSV."],
+                    ["Output reale", "Dal dato a sourcing, delivery e tracking."],
+                  ]
+                : [
+                    ["No new stack", "Works with your current systems and manual files."],
+                    ["Flexible input", "HRIS, payroll, spreadsheets or CSV import."],
+                    ["Real-world output", "From data to sourcing, delivery and tracking."],
+                  ]).map(([title, copy]) => (
                 <div key={title} className="rounded-2xl border border-border bg-background/35 p-4">
                   <p className="font-display text-lg font-bold text-foreground">{title}</p>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{copy}</p>
@@ -63,7 +74,7 @@ const Integrations = () => {
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto_1fr_auto_1fr]">
             <div className="rounded-[28px] border border-border-strong bg-card/95 p-6 shadow-soft">
               <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                Your stack
+                {isItalian ? "Il tuo stack" : "Your stack"}
               </p>
               <div className="grid grid-cols-2 gap-2.5">
                 {tools.map((tool) => (
@@ -96,7 +107,7 @@ const Integrations = () => {
               </div>
               <p className="mt-4 font-display text-xl font-extrabold text-foreground">Remvy</p>
               <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                Recognition execution engine
+                {isItalian ? "Recognition execution engine" : "Recognition execution engine"}
               </p>
             </div>
 
@@ -106,7 +117,7 @@ const Integrations = () => {
 
             <div className="rounded-[28px] border border-border-strong bg-card/95 p-6 shadow-soft">
               <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                Real-world execution
+                {isItalian ? "Execution nel mondo reale" : "Real-world execution"}
               </p>
               <div className="space-y-2.5">
                 {outputs.map(({ name, icon: Icon }) => (
@@ -124,7 +135,9 @@ const Integrations = () => {
         </div>
 
         <p className="mt-12 text-center text-sm text-muted-foreground">
-          If you do not see your tool here, Remvy also works with CSV upload or manual import.
+          {isItalian
+            ? "Se non vedi il tuo tool, Remvy funziona anche con CSV upload o import manuale."
+            : "If you do not see your tool here, Remvy also works with CSV upload or manual import."}
         </p>
       </div>
     </section>

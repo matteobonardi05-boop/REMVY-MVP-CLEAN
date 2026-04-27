@@ -1,6 +1,8 @@
 import { Check, X } from "lucide-react";
 
-const rows = [
+import { useIsItalian } from "@/lib/locale";
+
+const enRows = [
   { label: "Easy to start", values: [false, true, false, true] },
   { label: "Execution included", values: [false, "Partial", false, true] },
   { label: "Local suppliers", values: [false, false, false, true] },
@@ -9,7 +11,7 @@ const rows = [
   { label: "No IT setup required", values: [true, true, false, true] },
 ];
 
-const columns = ["Manual", "Gifting platforms", "HR software", "Remvy"];
+const enColumns = ["Manual", "Gifting platforms", "HR software", "Remvy"];
 
 const Cell = ({ value, accent }: { value: boolean | string; accent?: boolean }) => {
   if (value === true) {
@@ -23,7 +25,7 @@ const Cell = ({ value, accent }: { value: boolean | string; accent?: boolean }) 
   return <span className="text-xs font-medium text-muted-foreground">{value}</span>;
 };
 
-const summary = [
+const enSummary = [
   { label: "Manual", note: "Chaotic" },
   { label: "Platforms", note: "Transactional" },
   { label: "HR software", note: "Complex" },
@@ -31,6 +33,27 @@ const summary = [
 ];
 
 const WhyRemvy = () => {
+  const isItalian = useIsItalian();
+  const rows = isItalian
+    ? [
+        { label: "Facile da avviare", values: [false, true, false, true] },
+        { label: "Execution inclusa", values: [false, "Parziale", false, true] },
+        { label: "Fornitori locali", values: [false, false, false, true] },
+        { label: "Lavora con i tuoi tool", values: [true, false, true, true] },
+        { label: "Budget tracking", values: [false, false, true, true] },
+        { label: "Nessun setup IT richiesto", values: [true, true, false, true] },
+      ]
+    : enRows;
+  const columns = isItalian ? ["Manuale", "Gifting platform", "HR software", "Remvy"] : enColumns;
+  const summary = isItalian
+    ? [
+        { label: "Manuale", note: "Caotico" },
+        { label: "Platform", note: "Transazionale" },
+        { label: "HR software", note: "Complesso" },
+        { label: "Remvy", note: "Operational system", accent: true },
+      ]
+    : enSummary;
+
   return (
     <section id="why" className="relative border-t border-border">
       <div
@@ -42,28 +65,37 @@ const WhyRemvy = () => {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-end">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full border border-border-strong bg-surface/70 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Operational system
+              {isItalian ? "Operational system" : "Operational system"}
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-              More than another tool. <span className="text-accent text-glow">An operating system for recognition.</span>
+              {isItalian ? "Non un altro tool. " : "More than another tool. "}
+              <span className="text-accent text-glow">
+                {isItalian ? "Un operating system per la recognition." : "An operating system for recognition."}
+              </span>
             </h2>
             <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
-              Most alternatives cover one slice of the process. Remvy connects the data, applies the
-              rules, sources the gifts and handles the execution in the real world. That makes employee
-              experience more consistent and internal culture much more visible at scale.
+              {isItalian
+                ? "La maggior parte delle alternative copre solo una parte del processo. Remvy collega i dati, applica le regole, seleziona i gift e gestisce l'execution nel mondo reale. Cosi employee experience e cultura interna diventano piu consistenti e visibili."
+                : "Most alternatives cover one slice of the process. Remvy connects the data, applies the rules, sources the gifts and handles the execution in the real world. That makes employee experience more consistent and internal culture much more visible at scale."}
             </p>
           </div>
 
           <div className="rounded-[28px] border border-border-strong bg-card/90 p-6 shadow-soft">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-              Why this matters
+              {isItalian ? "Perche conta" : "Why this matters"}
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              {[
-                ["One workflow", "Rules, sourcing and delivery live in one system."],
-                ["Less admin", "No more manual coordination across teams."],
-                ["Stronger culture", "Important moments feel consistent, visible and intentional."],
-              ].map(([title, copy]) => (
+              {(isItalian
+                ? [
+                    ["Un workflow unico", "Regole, sourcing e delivery vivono nello stesso sistema."],
+                    ["Meno admin", "Meno coordinamento manuale tra team e fornitori."],
+                    ["Cultura piu forte", "I momenti importanti diventano consistenti, visibili e intenzionali."],
+                  ]
+                : [
+                    ["One workflow", "Rules, sourcing and delivery live in one system."],
+                    ["Less admin", "No more manual coordination across teams."],
+                    ["Stronger culture", "Important moments feel consistent, visible and intentional."],
+                  ]).map(([title, copy]) => (
                 <div key={title} className="rounded-2xl border border-border bg-background/35 p-4">
                   <p className="font-display text-lg font-bold text-foreground">{title}</p>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{copy}</p>

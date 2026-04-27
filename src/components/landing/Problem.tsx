@@ -1,6 +1,8 @@
 import { ArrowRight, CalendarX, EyeOff, Scale } from "lucide-react";
 
-const items = [
+import { useIsItalian } from "@/lib/locale";
+
+const enItems = [
   {
     icon: CalendarX,
     label: "Missed moments",
@@ -28,6 +30,36 @@ const items = [
 ];
 
 const Problem = () => {
+  const isItalian = useIsItalian();
+  const items = isItalian
+    ? [
+        {
+          icon: CalendarX,
+          label: "Momenti persi",
+          title: "Le date importanti scivolano via",
+          body: "Senza un sistema dedicato, compleanni, anniversari e onboarding dipendono da memoria, calendario e buona volonta.",
+          impact: "La cultura risulta incoerente",
+          points: ["Nessun reminder con ownership chiara", "Gift non ordinato in tempo", "Messaggio per il team preparato all'ultimo"],
+        },
+        {
+          icon: Scale,
+          label: "Experience diseguale",
+          title: "La recognition diventa visibilmente incoerente",
+          body: "Un team riceve un gesto curato, un altro qualcosa di improvvisato, qualcun altro nulla.",
+          impact: "Le persone confrontano l'esperienza",
+          points: ["Manager costretti a improvvisare", "Budget diversi senza logica", "La percezione di equita si indebolisce"],
+        },
+        {
+          icon: EyeOff,
+          label: "Blind spot operativi",
+          title: "L'execution avviene senza vera visibilita",
+          body: "Ordini, approvazioni, fornitori e consegne restano sparsi tra chat, spreadsheet e follow-up.",
+          impact: "Ore perse in admin",
+          points: ["Nessuna traccia budget pulita", "Delivery status non centralizzato", "Feedback difficile da usare per migliorare"],
+        },
+      ]
+    : enItems;
+
   return (
     <section id="problem" className="relative border-t border-border">
       <div
@@ -39,14 +71,17 @@ const Problem = () => {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.75fr)] lg:items-end">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full border border-border-strong bg-surface/70 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              The hidden cost
+              {isItalian ? "Il costo nascosto" : "The hidden cost"}
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-              Manual recognition creates <span className="text-accent text-glow">quiet friction</span> everywhere.
+              {isItalian ? "La recognition manuale crea " : "Manual recognition creates "}
+              <span className="text-accent text-glow">{isItalian ? "attrito silenzioso" : "quiet friction"}</span>
+              {isItalian ? " ovunque." : " everywhere."}
             </h2>
             <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
-              The problem is rarely the intention. It is the operational gap between wanting to show
-              appreciation and actually delivering every moment with the same care.
+              {isItalian
+                ? "Il problema raramente e l'intenzione. Il punto e il gap operativo tra voler mostrare attenzione e riuscire a consegnare ogni momento con la stessa cura."
+                : "The problem is rarely the intention. It is the operational gap between wanting to show appreciation and actually delivering every moment with the same care."}
             </p>
           </div>
 
@@ -57,14 +92,20 @@ const Problem = () => {
             />
             <div className="relative">
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-                What teams end up paying for
+                {isItalian ? "Quello che i team finiscono per pagare" : "What teams end up paying for"}
               </p>
               <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-                {[
-                  ["Missed timing", "Moments arrive late or not at all"],
-                  ["Uneven quality", "Recognition depends on who remembers"],
-                  ["Admin overhead", "Hours lost to sourcing and chasing"],
-                ].map(([title, copy]) => (
+                {(isItalian
+                  ? [
+                      ["Timing perso", "I momenti arrivano tardi o non arrivano"],
+                      ["Qualita diseguale", "La recognition dipende da chi se ne ricorda"],
+                      ["Overhead operativo", "Ore perse tra sourcing e follow-up"],
+                    ]
+                  : [
+                      ["Missed timing", "Moments arrive late or not at all"],
+                      ["Uneven quality", "Recognition depends on who remembers"],
+                      ["Admin overhead", "Hours lost to sourcing and chasing"],
+                    ]).map(([title, copy]) => (
                   <div key={title} className="rounded-2xl border border-border bg-background/35 p-4">
                     <p className="font-display text-lg font-bold text-foreground">{title}</p>
                     <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{copy}</p>
@@ -102,7 +143,7 @@ const Problem = () => {
 
                 <div className="mt-6 rounded-2xl border border-border bg-background/30 p-4">
                   <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-accent">
-                    Impact
+                    {isItalian ? "Impatto" : "Impact"}
                   </p>
                   <p className="mt-2 text-sm font-medium text-foreground">{impact}</p>
                 </div>
@@ -117,7 +158,7 @@ const Problem = () => {
                 </div>
 
                 <div className="mt-7 flex items-center gap-2 text-sm font-medium text-foreground/80">
-                  <span>Small misses become a visible culture issue</span>
+                  <span>{isItalian ? "Piccole mancanze diventano un problema visibile di cultura" : "Small misses become a visible culture issue"}</span>
                   <ArrowRight className="size-4 text-accent" strokeWidth={1.6} />
                 </div>
               </div>

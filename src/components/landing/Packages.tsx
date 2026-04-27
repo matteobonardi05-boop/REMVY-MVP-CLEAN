@@ -18,6 +18,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useIsItalian } from "@/lib/locale";
 import Logo from "./Logo";
 
 type Offer = {
@@ -216,8 +217,164 @@ const tabs: { key: OccasionKey; label: string }[] = [
 ];
 
 const Packages = () => {
+  const isItalian = useIsItalian();
   const [activeOccasion, setActiveOccasion] = useState<OccasionKey>("birthdays");
-  const currentOccasion = useMemo(() => occasions[activeOccasion], [activeOccasion]);
+  const localizedOffers = useMemo(() => {
+    if (!isItalian) return offers;
+
+    const copy: Record<string, Partial<Offer>> = {
+      cakes: {
+        label: "Torte",
+        title: "Torte artigianali per compleanni, celebrazioni in ufficio e milestone",
+        description:
+          "Dalle torte eleganti ai formati piu piccoli per team snelli, selezioniamo lo stile giusto per il momento e per il tono aziendale.",
+        bullets: ["Torte classiche da celebrazione", "Finiture custom premium", "Formati piccoli per team snelli", "Sourcing da pasticcerie locali"],
+        note: "Pensate per sembrare curate, non generiche.",
+      },
+      flowers: {
+        label: "Fiori",
+        title: "Bouquet e composizioni floreali che aggiungono calore senza essere banali",
+        description:
+          "Fiori stagionali, bouquet eleganti e combinazioni premium per celebrazioni, anniversari e gesti piu personali.",
+        bullets: ["Bouquet stagionali", "Flower box premium", "Composizioni adatte all'ufficio", "Sourcing da florist boutique"],
+        note: "Freschezza e qualita fanno parte dell'esperienza.",
+      },
+      gadgets: {
+        label: "Work gadgets",
+        title: "Gadget aziendali utili, custom e pensati per essere usati davvero",
+        description:
+          "Borracce, notebook, planner, palline antistress e accessori pratici da lavoro, selezionati per essere utili e ben fatti.",
+        bullets: ["Borracce", "Planner e notebook", "Accessori da scrivania", "Oggetti pratici brandizzati"],
+        note: "Creati per essere usati, non dimenticati.",
+      },
+      merch: {
+        label: "Branded merch",
+        title: "Merch brandizzato premium, coerente con un vero sistema di brand",
+        description:
+          "T-shirt, felpe, cappelli, zaini, porta-computer e altri prodotti brandizzati con una percezione curata, utile e di qualita.",
+        bullets: ["T-shirt e felpe", "Cappelli e accessori", "Zaini e porta-computer", "Essential brandizzati premium"],
+        note: "Brand-forward senza sembrare promozionale.",
+      },
+    };
+
+    return offers.map((offer) => ({ ...offer, ...copy[offer.id] }));
+  }, [isItalian]);
+  const localizedOccasions = useMemo(() => {
+    if (!isItalian) return occasions;
+
+    return {
+      birthdays: {
+        label: "Per compleanni",
+        title: "Combinazioni birthday semplici o piu premium",
+        intro: "Il birthday gifting deve adattarsi a budget, ruolo e cultura aziendale senza creare carico operativo.",
+        packs: occasions.birthdays.packs.map((pack) => ({
+          ...pack,
+          items: pack.items.map((item) =>
+            ({ Cake: "Torta", "Personalized card": "Biglietto personalizzato", "Useful gadget": "Gadget utile", Merch: "Merch", Flowers: "Fiori" })[item] ?? item,
+          ),
+          note:
+            {
+              "Birthday Signature": "Una combinazione semplice, calda e sempre efficace.",
+              "Team Celebration": "Aggiunge una componente pratica al momento.",
+              "Premium Spotlight": "Una soluzione piu premium senza risultare eccessiva.",
+              "Sweet & Floral": "Piu raffinata e visivamente piu espressiva.",
+            }[pack.name] ?? pack.note,
+        })),
+      },
+      onboarding: {
+        label: "Per onboarding",
+        title: "Welcome set che fanno sentire il day one piu curato e branded",
+        intro: "I welcome kit devono creare appartenenza in fretta e restare utili nella vita lavorativa quotidiana.",
+        packs: occasions.onboarding.packs.map((pack) => ({
+          ...pack,
+          items: pack.items.map((item) =>
+            ({
+              Merch: "Merch",
+              "Work gadgets": "Work gadgets",
+              "Hoodie or T-shirt": "Felpa o T-shirt",
+              Planner: "Planner",
+              "Water bottle": "Borraccia",
+              Notebook: "Notebook",
+              "Desk accessories": "Accessori desk",
+              "Backpack or laptop carrier": "Zaino o porta-computer",
+            })[item] ?? item,
+          ),
+          note:
+            {
+              "First Day Essentials": "Una combinazione onboarding pulita e pratica.",
+              "Brand Welcome": "Bilanciata e facile da scalare.",
+              "Workday Starter": "Pensata per essere utile gia dalla prima settimana.",
+              "Executive Arrival": "Ideale per key hire o employer branding premium.",
+            }[pack.name] ?? pack.note,
+        })),
+      },
+      anniversary: {
+        label: "Per work anniversaries",
+        title: "Combinazioni anniversary intenzionali, non standardizzate",
+        intro: "La recognition per anniversari funziona quando e abbastanza visibile da contare e abbastanza personalizzata da sembrare sincera.",
+        packs: occasions.anniversary.packs.map((pack) => ({
+          ...pack,
+          items: pack.items.map((item) =>
+            ({
+              "Work gadget": "Work gadget",
+              "Personalized card": "Biglietto personalizzato",
+              "Flowers or cake": "Fiori o torta",
+              Merch: "Merch",
+              Gadget: "Gadget",
+              "Message card": "Biglietto",
+              "Premium gadget": "Gadget premium",
+              Flowers: "Fiori",
+            })[item] ?? item,
+          ),
+          note:
+            {
+              "Quiet Appreciation": "Pulita, professionale e facile da personalizzare.",
+              "Culture Gesture": "Aggiunge calore al momento di recognition.",
+              "Team Recognition": "Una scelta piu forte per un momento piu visibile.",
+              "Tenure Tribute": "Una combinazione piu elevata per employee con maggiore seniority.",
+            }[pack.name] ?? pack.note,
+        })),
+      },
+      milestone: {
+        label: "Per milestone",
+        title: "Combinazioni milestone per momenti di recognition ad alto valore",
+        intro: "Le milestone piu strategiche meritano combinazioni premium, mantenendo il processo semplice da gestire.",
+        packs: occasions.milestone.packs.map((pack) => ({
+          ...pack,
+          items: pack.items.map((item) =>
+            ({
+              "Personalized card": "Biglietto personalizzato",
+              Gadget: "Gadget",
+              Merch: "Merch",
+              "Premium cake": "Torta premium",
+              "Message card": "Biglietto",
+              "Premium merch": "Merch premium",
+              "Work gadget": "Work gadget",
+              Flowers: "Fiori",
+              "Premium gadget": "Gadget premium",
+              "Personal note": "Nota personale",
+            })[item] ?? item,
+          ),
+          note:
+            {
+              "Milestone Signature": "Una baseline premium forte per gifting da milestone.",
+              "Celebration plus": "Ideale quando il momento viene condiviso con il team.",
+              "Leadership Marker": "Una combinazione premium pulita, con forte valore percepito.",
+              "Boutique Recognition": "Curata, calda e piu boutique nella percezione.",
+            }[pack.name] ?? pack.note,
+        })),
+      },
+    } satisfies Record<OccasionKey, Occasion>;
+  }, [isItalian]);
+  const localizedTabs = isItalian
+    ? [
+        { key: "birthdays" as OccasionKey, label: "Compleanni" },
+        { key: "onboarding" as OccasionKey, label: "Onboarding" },
+        { key: "anniversary" as OccasionKey, label: "Work anniversaries" },
+        { key: "milestone" as OccasionKey, label: "Milestone" },
+      ]
+    : tabs;
+  const currentOccasion = useMemo(() => localizedOccasions[activeOccasion], [activeOccasion, localizedOccasions]);
 
   return (
     <section id="packages" className="relative overflow-hidden border-t border-border bg-surface/20">
@@ -229,15 +386,18 @@ const Packages = () => {
       <div className="mx-auto w-full max-w-[1240px] px-6 py-28 lg:px-10 lg:py-40">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex rounded-full border border-border-strong bg-card/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            What we offer
+            {isItalian ? "Cosa offriamo" : "What we offer"}
           </span>
           <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-            <span className="block">Customizable packages</span>
-            <span className="mt-2 block text-accent text-glow">for every important employee moment</span>
+            <span className="block">{isItalian ? "Pacchetti personalizzabili" : "Customizable packages"}</span>
+            <span className="mt-2 block text-accent text-glow">
+              {isItalian ? "per ogni momento employee importante" : "for every important employee moment"}
+            </span>
           </h2>
           <p className="mx-auto mt-5 max-w-[64ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
-            Choose from our physical gifting selection, sourced from local boutiques to make the most
-            important employee moments feel special.
+            {isItalian
+              ? "Scegli tra una selezione di gifting fisico curata con boutique locali per rendere speciali i momenti piu importanti dei tuoi employee."
+              : "Choose from our physical gifting selection, sourced from local boutiques to make the most important employee moments feel special."}
           </p>
         </div>
 
@@ -245,22 +405,23 @@ const Packages = () => {
           <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-                Scroll through the offer
+                {isItalian ? "Esplora l'offerta" : "Scroll through the offer"}
               </p>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                Each category has a clearer visual identity and a stronger product feeling, so the
-                section reads as an offer, not as abstract copy.
+                {isItalian
+                  ? "Ogni categoria ha una visual identity chiara e una percezione piu concreta di prodotto, cosi la sezione comunica un'offerta reale."
+                  : "Each category has a clearer visual identity and a stronger product feeling, so the section reads as an offer, not as abstract copy."}
               </p>
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
               <Sparkles className="size-3.5 text-accent" strokeWidth={1.7} />
-              Drag or use arrows
+              {isItalian ? "Trascina o usa le frecce" : "Drag or use arrows"}
             </div>
           </div>
 
           <Carousel opts={{ align: "start" }} className="px-1">
             <CarouselContent className="-ml-5">
-              {offers.map((offer) => {
+              {localizedOffers.map((offer) => {
                 const Icon = offer.icon;
                 return (
                   <CarouselItem key={offer.id} className="pl-5 md:basis-[78%] xl:basis-[70%]">
@@ -301,7 +462,7 @@ const Packages = () => {
                         </div>
 
                         <div className="mt-8 flex items-center gap-2 text-sm font-medium text-foreground">
-                          <span>Configured by moment, audience and budget</span>
+                          <span>{isItalian ? "Configurato per momento, audience e budget" : "Configured by moment, audience and budget"}</span>
                           <ArrowRight className="size-4 text-accent" strokeWidth={1.6} />
                         </div>
                       </div>
@@ -318,19 +479,22 @@ const Packages = () => {
         <div className="mt-20 grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
           <div className="rounded-[30px] border border-border-strong bg-card/92 p-7 shadow-soft">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-              Example combinations
+              {isItalian ? "Combinazioni esempio" : "Example combinations"}
             </p>
             <h3 className="mt-4 font-display text-3xl font-bold leading-tight text-foreground">
-              <span className="block">Signature combinations</span>
-              <span className="mt-2 block text-accent text-glow">for every key moment</span>
+              <span className="block">{isItalian ? "Combinazioni signature" : "Signature combinations"}</span>
+              <span className="mt-2 block text-accent text-glow">
+                {isItalian ? "per ogni momento chiave" : "for every key moment"}
+              </span>
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground lg:text-base">
-              Choose a moment below to preview example combinations. The section stays visual, but the
-              structure is clearer and less repetitive than having a separate gifting catalogue.
+              {isItalian
+                ? "Scegli un momento per vedere combinazioni esempio. La struttura resta visuale, ma evita un catalogo gifting separato e ridondante."
+                : "Choose a moment below to preview example combinations. The section stays visual, but the structure is clearer and less repetitive than having a separate gifting catalogue."}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2.5">
-              {tabs.map((tab) => (
+              {localizedTabs.map((tab) => (
                 <button
                   key={tab.key}
                   type="button"
@@ -395,26 +559,36 @@ const Packages = () => {
               <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border-strong bg-card/60 px-3 py-1.5">
                 <Logo size={18} />
                 <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-foreground/88">
-                  Remvy curated sourcing
+                  {isItalian ? "Sourcing curato da Remvy" : "Remvy curated sourcing"}
                 </span>
               </div>
               <h3 className="mt-5 font-display text-3xl font-bold leading-tight text-foreground lg:text-4xl">
-                We work with local boutiques to protect quality, freshness and craft.
+                {isItalian
+                  ? "Lavoriamo con boutique locali per proteggere qualita, freschezza e artigianalita."
+                  : "We work with local boutiques to protect quality, freshness and craft."}
               </h3>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground lg:text-base">
-                Cakes, flowers and selected gift components are sourced through local boutique partners
-                because that is how we keep the experience artisanal, fresh and high-quality. It also
-                means your recognition budget supports the local economy instead of defaulting to generic
-                mass-market sourcing.
+                {isItalian
+                  ? "Torte, fiori e componenti selezionate dei gift vengono gestiti tramite partner locali per mantenere l'esperienza artigianale, fresca e di qualita. In piu, il budget di recognition sostiene l'economia locale invece di finire in sourcing generico di massa."
+                  : "Cakes, flowers and selected gift components are sourced through local boutique partners because that is how we keep the experience artisanal, fresh and high-quality. It also means your recognition budget supports the local economy instead of defaulting to generic mass-market sourcing."}
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                ["Artisanal quality", "The objects and gifts feel made with care, not bulk-ordered."],
-                ["Freshness", "Cakes and flowers arrive with a level of quality standard sourcing rarely matches."],
-                ["Stronger perception", "The moment feels more premium and more intentional."],
-                ["Local impact", "Recognition supports local businesses and makers."],
+                ...(isItalian
+                  ? [
+                      ["Qualita artigianale", "Oggetti e gift sembrano scelti con cura, non ordinati in blocco."],
+                      ["Freschezza", "Torte e fiori arrivano con uno standard che il sourcing generico raramente raggiunge."],
+                      ["Percezione piu forte", "Il momento risulta piu premium e intenzionale."],
+                      ["Impatto locale", "La recognition supporta business e maker locali."],
+                    ]
+                  : [
+                      ["Artisanal quality", "The objects and gifts feel made with care, not bulk-ordered."],
+                      ["Freshness", "Cakes and flowers arrive with a level of quality standard sourcing rarely matches."],
+                      ["Stronger perception", "The moment feels more premium and more intentional."],
+                      ["Local impact", "Recognition supports local businesses and makers."],
+                    ]),
               ].map(([title, copy]) => (
                 <div key={title} className="rounded-[26px] border border-border bg-card/90 p-5">
                   <p className="font-display text-xl font-bold text-foreground">{title}</p>

@@ -1,6 +1,8 @@
 import { Check, Gift, SlidersHorizontal, Wallet } from "lucide-react";
 
-const items = [
+import { useIsItalian } from "@/lib/locale";
+
+const enItems = [
   {
     icon: Wallet,
     label: "Budget logic",
@@ -24,7 +26,47 @@ const items = [
   },
 ];
 
+const itItems = [
+  {
+    icon: Wallet,
+    label: "Budget logic",
+    title: "Imposti una volta le regole di budget",
+    body: "Definisci quanto investire per momento, ruolo, seniority o mercato. Remvy mantiene ogni execution allineata automaticamente.",
+    highlights: ["Cap per tipologia di evento", "Range approvabili internamente", "Controllo prevedibile del budget"],
+  },
+  {
+    icon: Gift,
+    label: "Gift strategy",
+    title: "Scegli l'esperienza che vuoi far vivere",
+    body: "Costruisci un catalogo coerente con la tua cultura, dai welcome kit essenziali ai gift premium per milestone importanti.",
+    highlights: ["Categorie gift curate", "Tier diversi per momento", "Allineamento a brand e cultura"],
+  },
+  {
+    icon: SlidersHorizontal,
+    label: "Decision rules",
+    title: "Trasformi policy e preferenze in un playbook operativo",
+    body: "Crei regole per team, livello, sede o evento. Una volta definita la logica, Remvy la applica in modo consistente.",
+    highlights: ["Regole per ruolo", "Varianti per sede", "Execution ripetibile ogni volta"],
+  },
+];
+
 const YouDefine = () => {
+  const isItalian = useIsItalian();
+  const items = isItalian ? itItems : enItems;
+  const controlItems = isItalian
+    ? [
+        "Budget per momento e audience",
+        "Categorie, tier e stile dei gift",
+        "Regole per ruolo, sede o milestone",
+        "Timing notifiche e finestre di approvazione",
+      ]
+    : [
+        "Budget per moment and audience",
+        "Gift categories, tiers and style",
+        "Rules by role, office or milestone",
+        "Notification timing and approval windows",
+      ];
+
   return (
     <section id="playbook" className="relative border-t border-border bg-surface/30">
       <div
@@ -36,16 +78,18 @@ const YouDefine = () => {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(320px,0.8fr)] lg:items-end">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full border border-border-strong bg-card/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Your recognition playbook
+              {isItalian ? "Il tuo recognition playbook" : "Your recognition playbook"}
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-              <span className="block">You define the moment.</span>
-              <span className="mt-2 block text-accent text-glow">We handle everything.</span>
+              <span className="block">{isItalian ? "Tu definisci il momento." : "You define the moment."}</span>
+              <span className="mt-2 block text-accent text-glow">
+                {isItalian ? "Remvy gestisce tutto." : "We handle everything."}
+              </span>
             </h2>
             <p className="mt-5 max-w-[60ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
-              Set the standards once, then let Remvy execute with the same level of care every time.
-              No spreadsheet choreography, no follow-up chaos, no reinvention for each moment. This is
-              how employee experience scales and internal culture becomes visible in day-to-day work life.
+              {isItalian
+                ? "Imposti standard, budget, regole e stile una volta sola. Remvy esegue ogni momento con lo stesso livello di cura, senza rincorrere spreadsheet, fornitori e follow-up. E cosi employee experience e cultura interna diventano scalabili."
+                : "Set the standards once, then let Remvy execute with the same level of care every time. No spreadsheet choreography, no follow-up chaos, no reinvention for each moment. This is how employee experience scales and internal culture becomes visible in day-to-day work life."}
             </p>
           </div>
 
@@ -56,15 +100,10 @@ const YouDefine = () => {
             />
             <div className="relative">
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-                What you control
+                {isItalian ? "Cosa controlli" : "What you control"}
               </p>
               <div className="mt-6 space-y-3">
-                {[
-                  "Budget per moment and audience",
-                  "Gift categories, tiers and style",
-                  "Rules by role, office or milestone",
-                  "Notification timing and approval windows",
-                ].map((item) => (
+                {controlItems.map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-2xl border border-border bg-background/30 px-4 py-3">
                     <span className="mt-0.5 inline-flex size-5 items-center justify-center rounded-full bg-accent/15 text-accent">
                       <Check className="size-3.5" strokeWidth={2.4} />
@@ -76,15 +115,17 @@ const YouDefine = () => {
 
               <div className="mt-6 rounded-2xl border border-border bg-background/35 p-4">
                 <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-accent">
-                  Approval notifications
+                  {isItalian ? "Notifiche di approvazione" : "Approval notifications"}
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Remvy can send customizable push notifications 7, 5 and 2 days before delivery to
-                  confirm or adjust each order according to your personalization rules.
+                  {isItalian
+                    ? "Remvy puo inviare notifiche personalizzabili a 7, 5 e 2 giorni dalla delivery per confermare o modificare ogni ordine secondo le regole definite."
+                    : "Remvy can send customizable push notifications 7, 5 and 2 days before delivery to confirm or adjust each order according to your personalization rules."}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/88">
-                  Two days before delivery is the last window to edit or cancel. After that, the order
-                  is confirmed.
+                  {isItalian
+                    ? "Due giorni prima della consegna e l'ultima finestra per modificare o annullare. Dopo, l'ordine viene confermato."
+                    : "Two days before delivery is the last window to edit or cancel. After that, the order is confirmed."}
                 </p>
               </div>
             </div>
@@ -118,7 +159,7 @@ const YouDefine = () => {
 
                 <div className="mt-6 rounded-2xl border border-border bg-background/30 p-4">
                   <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-accent">
-                    Includes
+                    {isItalian ? "Include" : "Includes"}
                   </p>
                   <div className="mt-3 space-y-3">
                     {highlights.map((point) => (
