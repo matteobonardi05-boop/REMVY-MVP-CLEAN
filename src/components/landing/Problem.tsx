@@ -37,7 +37,7 @@ const Problem = () => {
           icon: CalendarX,
           label: "Momenti persi",
           title: "Le date importanti scivolano via",
-          body: "Senza un sistema dedicato, compleanni, anniversari e onboarding dipendono da memoria, calendario e buona volonta.",
+          body: "Senza un sistema dedicato, compleanni, anniversari e onboarding dipendono da memoria, calendario e buona volontà.",
           impact: "La cultura risulta incoerente",
           points: ["Nessun reminder con ownership chiara", "Gift non ordinato in tempo", "Messaggio per il team preparato all'ultimo"],
         },
@@ -47,12 +47,12 @@ const Problem = () => {
           title: "La recognition diventa visibilmente incoerente",
           body: "Un team riceve un gesto curato, un altro qualcosa di improvvisato, qualcun altro nulla.",
           impact: "Le persone confrontano l'esperienza",
-          points: ["Manager costretti a improvvisare", "Budget diversi senza logica", "La percezione di equita si indebolisce"],
+          points: ["Manager costretti a improvvisare", "Budget diversi senza logica", "La percezione di equità si indebolisce"],
         },
         {
           icon: EyeOff,
           label: "Blind spot operativi",
-          title: "L'execution avviene senza vera visibilita",
+          title: "L'execution avviene senza vera visibilità",
           body: "Ordini, approvazioni, fornitori e consegne restano sparsi tra chat, spreadsheet e follow-up.",
           impact: "Ore perse in admin",
           points: ["Nessuna traccia budget pulita", "Delivery status non centralizzato", "Feedback difficile da usare per migliorare"],
@@ -80,7 +80,7 @@ const Problem = () => {
             </h2>
             <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
               {isItalian
-                ? "Il problema raramente e l'intenzione. Il punto e il gap operativo tra voler mostrare attenzione e riuscire a consegnare ogni momento con la stessa cura."
+                ? "Il problema raramente è l'intenzione. Il punto è il gap operativo tra voler mostrare attenzione e riuscire a consegnare ogni momento con la stessa cura."
                 : "The problem is rarely the intention. It is the operational gap between wanting to show appreciation and actually delivering every moment with the same care."}
             </p>
           </div>

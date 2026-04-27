@@ -17,7 +17,7 @@ const FinalCTA = () => {
         </h2>
         <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
           {isItalian
-            ? "Configuriamo workflow, logica di gifting ed execution con gli strumenti che usi gia, cosi il tuo team puo approvare i momenti invece di gestirli manualmente."
+            ? "Configuriamo workflow, logica di gifting ed execution con gli strumenti che usi già, così il tuo team può approvare i momenti invece di gestirli manualmente."
             : "We configure the workflow, align the gifting logic and run the execution with your current tools, so your team can approve moments instead of managing them manually."}
         </p>
 
@@ -41,7 +41,7 @@ const FinalCTA = () => {
             ...(isItalian
               ? [
                   ["Nessuna migrazione", "Mantieni HR stack e processo onboarding attuali."],
-                  ["Sourcing locale", "Usa boutique partner per qualita e freschezza superiori."],
+                  ["Sourcing locale", "Usa boutique partner per qualità e freschezza superiori."],
                   ["Execution visibile", "Traccia budget, delivery e feedback in un'unica vista."],
                 ]
               : [

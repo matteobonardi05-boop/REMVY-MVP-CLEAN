@@ -134,7 +134,7 @@ const DashboardMock = () => {
               {[
                 { value: "9", label: isItalian ? "Momenti attivi" : "Active moments" },
                 { value: "98%", label: isItalian ? "Delivery puntuali" : "On-time delivery" },
-                { value: "4.8 / 5", label: isItalian ? "Employee sentiment" : "Employee sentiment" },
+                { value: "4.8 / 5", label: isItalian ? "Livello di gradimento" : "Employee sentiment" },
               ].map((item) => (
                 <div key={item.label} className="rounded-2xl border border-border bg-background/35 px-4 py-4">
                   <div className="font-display text-3xl font-bold leading-none text-foreground">{item.value}</div>
@@ -262,7 +262,7 @@ const DashboardMock = () => {
 
             <div className="p-5 sm:col-span-2 xl:col-span-1">
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                {isItalian ? "Soddisfazione per momento" : "Satisfaction by moment"}
+                {isItalian ? "Livello di gradimento per momento" : "Satisfaction by moment"}
               </p>
               <div className="mt-4 space-y-4">
                 {satisfaction.map((item) => (
@@ -288,7 +288,7 @@ const DashboardMock = () => {
                   </span>
                 </div>
                 <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-accent">
-                  {isItalian ? "Visibilita completa in una vista" : "Full visibility in one view"}
+                  {isItalian ? "Visibilità completa in una vista" : "Full visibility in one view"}
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {isItalian

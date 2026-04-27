@@ -7,21 +7,21 @@ const Hero = () => {
   const isItalian = useIsItalian();
   const t = isItalian
     ? {
-        moreCities: "Altre citta in arrivo",
+        moreCities: "More coming soon",
         badge: "Recognition operations per team moderni",
-        line1: "Riconosci e celebra",
+        line1: "Ricompensa e celebra",
         line2: "i tuoi employee",
         line3: "rendendo memorabili i momenti che contano",
         subtitle: "Personalizzi una volta e Remvy gestisce sourcing, delivery, tracking e feedback.",
-        body: "Pensato per aziende che vogliono far crescere employee experience, cultura interna e qualita della vita lavorativa.",
+        body: "Pensato per aziende che vogliono far crescere employee experience, cultura aziendale interna e qualità della vita di un employee.",
         primary: "Prenota un pilot",
         secondary: "Guarda il workflow",
         proof: [
-          ["Nessun rollout software", "Funziona con HR tools, spreadsheet e workflow gia in uso."],
-          ["Sourcing locale boutique", "Torte, fiori e gift selezionati per qualita, freschezza e cura."],
-          ["Visibilita operativa", "Budget, delivery e feedback tracciati in una dashboard unica."],
+          ["Nessun rollout software", "Funziona con HR tools, spreadsheet e workflow già in uso."],
+          ["Sourcing locale boutique", "Torte, fiori e gift selezionati per qualità, freschezza e cura."],
+          ["Visibilità operativa", "Budget, delivery e feedback tracciati in una dashboard unica."],
         ],
-        note: "Copre onboarding, compleanni, anniversari, milestone e altri momenti chiave del percorso employee.",
+        note: "Copriamo onboarding, compleanni, anniversari, milestone e altri momenti chiave del percorso employee.",
       }
     : {
         moreCities: "More coming soon",

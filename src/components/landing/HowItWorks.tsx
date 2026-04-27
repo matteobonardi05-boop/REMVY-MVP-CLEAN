@@ -95,7 +95,7 @@ const HowItWorks = () => {
                 ? [
                     ["Sempre aggiornato", "CSV oggi, HRIS sync in arrivo, con cambiamenti del personale riflessi nel tempo."],
                     ["Execution basata su regole", "Budget, gift e approvazioni seguono il playbook definito."],
-                    ["Outcome visibili", "Budget, delivery, qualita fornitori e feedback vivono nello stesso workflow."],
+                    ["Outcome visibili", "Budget, delivery, qualità fornitori e feedback vivono nello stesso workflow."],
                   ]
                 : [
                     ["Always current", "CSV today, HRIS sync soon, with employee changes reflected over time."],
@@ -156,7 +156,7 @@ const HowItWorks = () => {
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               {isItalian
-                ? "Reminder personalizzabili possono partire 7, 5 e 2 giorni prima della delivery, cosi ogni ordine puo essere confermato, modificato o annullato prima della finestra finale."
+                ? "Reminder personalizzabili possono partire 7, 5 e 2 giorni prima della delivery, così ogni ordine può essere confermato, modificato o annullato prima della finestra finale."
                 : "Customizable reminders can be sent 7, 5 and 2 days before delivery, so each order can be confirmed, adjusted or cancelled before the final lock window."}
             </p>
           </div>

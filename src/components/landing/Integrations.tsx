@@ -36,11 +36,11 @@ const Integrations = () => {
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
               <span className="text-accent text-glow">{isItalian ? "Built to work" : "Built to work"}</span>{" "}
-              {isItalian ? "con gli strumenti che usi gia." : "with the tools you already use."}
+              {isItalian ? "con gli strumenti che usi già." : "with the tools you already use."}
             </h2>
             <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
               {isItalian
-                ? "Remvy si integra con gli HR tools che l'azienda usa gia, cosi la recognition entra nel workflow invece di diventare un altro sistema da gestire."
+                ? "Remvy si integra con gli HR tools che l'azienda usa già, così la recognition entra nel workflow invece di diventare un altro sistema da gestire."
                 : "Remvy fits into the HR tools companies already rely on, so recognition can become part of the workflow instead of another separate system to manage."}
             </p>
           </div>

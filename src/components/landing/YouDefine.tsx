@@ -81,14 +81,16 @@ const YouDefine = () => {
               {isItalian ? "Il tuo recognition playbook" : "Your recognition playbook"}
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-              <span className="block">{isItalian ? "Tu definisci il momento." : "You define the moment."}</span>
+              <span className={isItalian ? "block whitespace-nowrap" : "block"}>
+                {isItalian ? "Tu personalizzi il momento." : "You define the moment."}
+              </span>
               <span className="mt-2 block text-accent text-glow">
                 {isItalian ? "Remvy gestisce tutto." : "We handle everything."}
               </span>
             </h2>
             <p className="mt-5 max-w-[60ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
               {isItalian
-                ? "Imposti standard, budget, regole e stile una volta sola. Remvy esegue ogni momento con lo stesso livello di cura, senza rincorrere spreadsheet, fornitori e follow-up. E cosi employee experience e cultura interna diventano scalabili."
+                ? "Imposti standard, budget, regole e stile una volta sola. Remvy esegue ogni momento con lo stesso livello di cura, senza rincorrere spreadsheet, fornitori e follow-up. In questo modo employee experience e cultura interna diventano scalabili."
                 : "Set the standards once, then let Remvy execute with the same level of care every time. No spreadsheet choreography, no follow-up chaos, no reinvention for each moment. This is how employee experience scales and internal culture becomes visible in day-to-day work life."}
             </p>
           </div>
@@ -119,12 +121,12 @@ const YouDefine = () => {
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {isItalian
-                    ? "Remvy puo inviare notifiche personalizzabili a 7, 5 e 2 giorni dalla delivery per confermare o modificare ogni ordine secondo le regole definite."
+                    ? "Remvy può inviare notifiche personalizzabili a 7, 5 e 2 giorni dalla delivery per confermare o modificare ogni ordine secondo le regole definite."
                     : "Remvy can send customizable push notifications 7, 5 and 2 days before delivery to confirm or adjust each order according to your personalization rules."}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/88">
                   {isItalian
-                    ? "Due giorni prima della consegna e l'ultima finestra per modificare o annullare. Dopo, l'ordine viene confermato."
+                    ? "Due giorni prima della consegna è l'ultima finestra per modificare o annullare. Dopo, l'ordine viene confermato."
                     : "Two days before delivery is the last window to edit or cancel. After that, the order is confirmed."}
                 </p>
               </div>

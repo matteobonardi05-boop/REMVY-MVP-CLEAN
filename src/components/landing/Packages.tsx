@@ -227,7 +227,7 @@ const Packages = () => {
         label: "Torte",
         title: "Torte artigianali per compleanni, celebrazioni in ufficio e milestone",
         description:
-          "Dalle torte eleganti ai formati piu piccoli per team snelli, selezioniamo lo stile giusto per il momento e per il tono aziendale.",
+          "Dalle torte eleganti ai formati più piccoli per team snelli, selezioniamo lo stile giusto per il momento e per il tono aziendale.",
         bullets: ["Torte classiche da celebrazione", "Finiture custom premium", "Formati piccoli per team snelli", "Sourcing da pasticcerie locali"],
         note: "Pensate per sembrare curate, non generiche.",
       },
@@ -235,9 +235,9 @@ const Packages = () => {
         label: "Fiori",
         title: "Bouquet e composizioni floreali che aggiungono calore senza essere banali",
         description:
-          "Fiori stagionali, bouquet eleganti e combinazioni premium per celebrazioni, anniversari e gesti piu personali.",
+          "Fiori stagionali, bouquet eleganti e combinazioni premium per celebrazioni, anniversari e gesti più personali.",
         bullets: ["Bouquet stagionali", "Flower box premium", "Composizioni adatte all'ufficio", "Sourcing da florist boutique"],
-        note: "Freschezza e qualita fanno parte dell'esperienza.",
+        note: "Freschezza e qualità fanno parte dell'esperienza.",
       },
       gadgets: {
         label: "Work gadgets",
@@ -251,7 +251,7 @@ const Packages = () => {
         label: "Branded merch",
         title: "Merch brandizzato premium, coerente con un vero sistema di brand",
         description:
-          "T-shirt, felpe, cappelli, zaini, porta-computer e altri prodotti brandizzati con una percezione curata, utile e di qualita.",
+          "T-shirt, felpe, cappelli, zaini, porta-computer e altri prodotti brandizzati con una percezione curata, utile e di qualità.",
         bullets: ["T-shirt e felpe", "Cappelli e accessori", "Zaini e porta-computer", "Essential brandizzati premium"],
         note: "Brand-forward senza sembrare promozionale.",
       },
@@ -265,7 +265,7 @@ const Packages = () => {
     return {
       birthdays: {
         label: "Per compleanni",
-        title: "Combinazioni birthday semplici o piu premium",
+        title: "Combinazioni birthday semplici o più premium",
         intro: "Il birthday gifting deve adattarsi a budget, ruolo e cultura aziendale senza creare carico operativo.",
         packs: occasions.birthdays.packs.map((pack) => ({
           ...pack,
@@ -276,14 +276,14 @@ const Packages = () => {
             {
               "Birthday Signature": "Una combinazione semplice, calda e sempre efficace.",
               "Team Celebration": "Aggiunge una componente pratica al momento.",
-              "Premium Spotlight": "Una soluzione piu premium senza risultare eccessiva.",
-              "Sweet & Floral": "Piu raffinata e visivamente piu espressiva.",
+              "Premium Spotlight": "Una soluzione più premium senza risultare eccessiva.",
+              "Sweet & Floral": "Più raffinata e visivamente più espressiva.",
             }[pack.name] ?? pack.note,
         })),
       },
       onboarding: {
         label: "Per onboarding",
-        title: "Welcome set che fanno sentire il day one piu curato e branded",
+        title: "Welcome set che fanno sentire il day one più curato e branded",
         intro: "I welcome kit devono creare appartenenza in fretta e restare utili nella vita lavorativa quotidiana.",
         packs: occasions.onboarding.packs.map((pack) => ({
           ...pack,
@@ -303,7 +303,7 @@ const Packages = () => {
             {
               "First Day Essentials": "Una combinazione onboarding pulita e pratica.",
               "Brand Welcome": "Bilanciata e facile da scalare.",
-              "Workday Starter": "Pensata per essere utile gia dalla prima settimana.",
+              "Workday Starter": "Pensata per essere utile già dalla prima settimana.",
               "Executive Arrival": "Ideale per key hire o employer branding premium.",
             }[pack.name] ?? pack.note,
         })),
@@ -311,7 +311,7 @@ const Packages = () => {
       anniversary: {
         label: "Per work anniversaries",
         title: "Combinazioni anniversary intenzionali, non standardizzate",
-        intro: "La recognition per anniversari funziona quando e abbastanza visibile da contare e abbastanza personalizzata da sembrare sincera.",
+        intro: "La recognition per anniversari funziona quando è abbastanza visibile da contare e abbastanza personalizzata da sembrare sincera.",
         packs: occasions.anniversary.packs.map((pack) => ({
           ...pack,
           items: pack.items.map((item) =>
@@ -330,15 +330,15 @@ const Packages = () => {
             {
               "Quiet Appreciation": "Pulita, professionale e facile da personalizzare.",
               "Culture Gesture": "Aggiunge calore al momento di recognition.",
-              "Team Recognition": "Una scelta piu forte per un momento piu visibile.",
-              "Tenure Tribute": "Una combinazione piu elevata per employee con maggiore seniority.",
+              "Team Recognition": "Una scelta più forte per un momento più visibile.",
+              "Tenure Tribute": "Una combinazione più elevata per employee con maggiore seniority.",
             }[pack.name] ?? pack.note,
         })),
       },
       milestone: {
         label: "Per milestone",
         title: "Combinazioni milestone per momenti di recognition ad alto valore",
-        intro: "Le milestone piu strategiche meritano combinazioni premium, mantenendo il processo semplice da gestire.",
+        intro: "Le milestone più strategiche meritano combinazioni premium, mantenendo il processo semplice da gestire.",
         packs: occasions.milestone.packs.map((pack) => ({
           ...pack,
           items: pack.items.map((item) =>
@@ -360,7 +360,7 @@ const Packages = () => {
               "Milestone Signature": "Una baseline premium forte per gifting da milestone.",
               "Celebration plus": "Ideale quando il momento viene condiviso con il team.",
               "Leadership Marker": "Una combinazione premium pulita, con forte valore percepito.",
-              "Boutique Recognition": "Curata, calda e piu boutique nella percezione.",
+              "Boutique Recognition": "Curata, calda e più boutique nella percezione.",
             }[pack.name] ?? pack.note,
         })),
       },
@@ -396,7 +396,7 @@ const Packages = () => {
           </h2>
           <p className="mx-auto mt-5 max-w-[64ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
             {isItalian
-              ? "Scegli tra una selezione di gifting fisico curata con boutique locali per rendere speciali i momenti piu importanti dei tuoi employee."
+              ? "Scegli tra una selezione di gifting fisico curata con boutique locali per rendere speciali i momenti più importanti dei tuoi employee."
               : "Choose from our physical gifting selection, sourced from local boutiques to make the most important employee moments feel special."}
           </p>
         </div>
@@ -409,7 +409,7 @@ const Packages = () => {
               </p>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 {isItalian
-                  ? "Ogni categoria ha una visual identity chiara e una percezione piu concreta di prodotto, cosi la sezione comunica un'offerta reale."
+                  ? "Ogni categoria ha una visual identity chiara e una percezione più concreta di prodotto, così la sezione comunica un'offerta reale."
                   : "Each category has a clearer visual identity and a stronger product feeling, so the section reads as an offer, not as abstract copy."}
               </p>
             </div>
@@ -489,7 +489,7 @@ const Packages = () => {
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground lg:text-base">
               {isItalian
-                ? "Scegli un momento per vedere combinazioni esempio. La struttura resta visuale, ma evita un catalogo gifting separato e ridondante."
+                ? "Scegli un momento per vedere delle combinazioni esempio. La struttura resta modificabile a piacimento, ma i pacchetti evitano di fornire un catalogo gifting separato e ridondante."
                 : "Choose a moment below to preview example combinations. The section stays visual, but the structure is clearer and less repetitive than having a separate gifting catalogue."}
             </p>
 
@@ -564,12 +564,12 @@ const Packages = () => {
               </div>
               <h3 className="mt-5 font-display text-3xl font-bold leading-tight text-foreground lg:text-4xl">
                 {isItalian
-                  ? "Lavoriamo con boutique locali per proteggere qualita, freschezza e artigianalita."
+                  ? "Lavoriamo con boutique locali per proteggere qualità, freschezza e artigianalità."
                   : "We work with local boutiques to protect quality, freshness and craft."}
               </h3>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground lg:text-base">
                 {isItalian
-                  ? "Torte, fiori e componenti selezionate dei gift vengono gestiti tramite partner locali per mantenere l'esperienza artigianale, fresca e di qualita. In piu, il budget di recognition sostiene l'economia locale invece di finire in sourcing generico di massa."
+                  ? "Torte, fiori e componenti selezionate dei gift vengono gestiti tramite partner locali per mantenere l'esperienza artigianale, fresca e di qualità. In più, il budget di recognition sostiene l'economia locale invece di finire in sourcing generico di massa."
                   : "Cakes, flowers and selected gift components are sourced through local boutique partners because that is how we keep the experience artisanal, fresh and high-quality. It also means your recognition budget supports the local economy instead of defaulting to generic mass-market sourcing."}
               </p>
             </div>
@@ -578,9 +578,9 @@ const Packages = () => {
               {[
                 ...(isItalian
                   ? [
-                      ["Qualita artigianale", "Oggetti e gift sembrano scelti con cura, non ordinati in blocco."],
+                      ["Qualità artigianale", "Oggetti e gift sembrano scelti con cura, non ordinati in blocco."],
                       ["Freschezza", "Torte e fiori arrivano con uno standard che il sourcing generico raramente raggiunge."],
-                      ["Percezione piu forte", "Il momento risulta piu premium e intenzionale."],
+                      ["Percezione più forte", "Il momento risulta più premium e intenzionale."],
                       ["Impatto locale", "La recognition supporta business e maker locali."],
                     ]
                   : [

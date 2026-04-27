@@ -75,21 +75,21 @@ const WhyRemvy = () => {
             </h2>
             <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
               {isItalian
-                ? "La maggior parte delle alternative copre solo una parte del processo. Remvy collega i dati, applica le regole, seleziona i gift e gestisce l'execution nel mondo reale. Cosi employee experience e cultura interna diventano piu consistenti e visibili."
+                ? "La maggior parte delle alternative copre solo una parte del processo. Remvy collega i dati, applica le regole, seleziona i gift e gestisce l'execution nel mondo reale. Così employee experience e cultura interna diventano più consistenti e visibili."
                 : "Most alternatives cover one slice of the process. Remvy connects the data, applies the rules, sources the gifts and handles the execution in the real world. That makes employee experience more consistent and internal culture much more visible at scale."}
             </p>
           </div>
 
           <div className="rounded-[28px] border border-border-strong bg-card/90 p-6 shadow-soft">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-              {isItalian ? "Perche conta" : "Why this matters"}
+              {isItalian ? "Perché conta" : "Why this matters"}
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
               {(isItalian
                 ? [
                     ["Un workflow unico", "Regole, sourcing e delivery vivono nello stesso sistema."],
                     ["Meno admin", "Meno coordinamento manuale tra team e fornitori."],
-                    ["Cultura piu forte", "I momenti importanti diventano consistenti, visibili e intenzionali."],
+                    ["Cultura più forte", "I momenti importanti diventano consistenti, visibili e intenzionali."],
                   ]
                 : [
                     ["One workflow", "Rules, sourcing and delivery live in one system."],
