@@ -3,15 +3,15 @@ import { Check, X } from "lucide-react";
 import { useIsItalian } from "@/lib/locale";
 
 const enRows = [
-  { label: "Easy to start", values: [false, true, false, true] },
+  { label: "Removes manual coordination", values: [false, false, false, true] },
   { label: "Execution included", values: [false, "Partial", false, true] },
-  { label: "Local suppliers", values: [false, false, false, true] },
-  { label: "Works with your tools", values: [true, false, true, true] },
-  { label: "Budget tracking", values: [false, false, true, true] },
-  { label: "No IT setup required", values: [true, true, false, true] },
+  { label: "Local physical delivery", values: [false, false, false, true] },
+  { label: "Works with existing tools", values: [true, false, true, true] },
+  { label: "Budget and feedback visibility", values: [false, false, true, true] },
+  { label: "No IT rollout required", values: [true, true, false, true] },
 ];
 
-const enColumns = ["Manual", "Gifting platforms", "HR software", "Remvy"];
+const enColumns = ["Manual", "Gifting service", "HR software", "Remvy"];
 
 const Cell = ({ value, accent }: { value: boolean | string; accent?: boolean }) => {
   if (value === true) {
@@ -26,31 +26,31 @@ const Cell = ({ value, accent }: { value: boolean | string; accent?: boolean }) 
 };
 
 const enSummary = [
-  { label: "Manual", note: "Chaotic" },
-  { label: "Platforms", note: "Transactional" },
-  { label: "HR software", note: "Complex" },
-  { label: "Remvy", note: "Operational system", accent: true },
+  { label: "Manual", note: "Depends on people remembering" },
+  { label: "Gifting service", note: "Solves the object, not the process" },
+  { label: "HR software", note: "Stores data, adds implementation" },
+  { label: "Remvy", note: "Removes the operating workload", accent: true },
 ];
 
 const WhyRemvy = () => {
   const isItalian = useIsItalian();
   const rows = isItalian
     ? [
-        { label: "Facile da avviare", values: [false, true, false, true] },
+        { label: "Rimuove coordinamento manuale", values: [false, false, false, true] },
         { label: "Execution inclusa", values: [false, "Parziale", false, true] },
-        { label: "Fornitori locali", values: [false, false, false, true] },
-        { label: "Lavora con i tuoi tool", values: [true, false, true, true] },
-        { label: "Budget tracking", values: [false, false, true, true] },
-        { label: "Nessun setup IT richiesto", values: [true, true, false, true] },
+        { label: "Delivery fisica locale", values: [false, false, false, true] },
+        { label: "Lavora con i tool esistenti", values: [true, false, true, true] },
+        { label: "Visibilità su budget e feedback", values: [false, false, true, true] },
+        { label: "Nessun rollout IT richiesto", values: [true, true, false, true] },
       ]
     : enRows;
-  const columns = isItalian ? ["Manuale", "Gifting platform", "HR software", "Remvy"] : enColumns;
+  const columns = isItalian ? ["Manuale", "Servizio gift", "HR software", "Remvy"] : enColumns;
   const summary = isItalian
     ? [
-        { label: "Manuale", note: "Caotico" },
-        { label: "Platform", note: "Transazionale" },
-        { label: "HR software", note: "Complesso" },
-        { label: "Remvy", note: "Operational system", accent: true },
+        { label: "Manuale", note: "Dipende da chi se ne ricorda" },
+        { label: "Servizio gift", note: "Risolve l'oggetto, non il processo" },
+        { label: "HR software", note: "Archivia dati, richiede implementazione" },
+        { label: "Remvy", note: "Rimuove il carico operativo", accent: true },
       ]
     : enSummary;
 
@@ -68,15 +68,18 @@ const WhyRemvy = () => {
               {isItalian ? "Operational system" : "Operational system"}
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-              {isItalian ? "Non un altro tool. " : "More than another tool. "}
-              <span className="text-accent text-glow">
-                {isItalian ? "Un operating system per la recognition." : "An operating system for recognition."}
+              <span className="block">{isItalian ? "Non un tool HR." : "Not an HR tool."}</span>
+              <span className="mt-2 block">
+                {isItalian ? "Non un servizio di gifting." : "Not a gifting service."}
+              </span>
+              <span className="mt-2 block text-accent text-glow">
+                {isItalian ? "Un layer operativo." : "An operating layer."}
               </span>
             </h2>
-            <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
+            <p className="mt-5 max-w-[66ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
               {isItalian
-                ? "La maggior parte delle alternative copre solo una parte del processo. Remvy collega i dati, applica le regole, seleziona i gift e gestisce l'execution nel mondo reale. Così employee experience e cultura interna diventano più consistenti e visibili."
-                : "Most alternatives cover one slice of the process. Remvy connects the data, applies the rules, sources the gifts and handles the execution in the real world. That makes employee experience more consistent and internal culture much more visible at scale."}
+                ? "Remvy prende un processo non core, ripetitivo e frammentato, lo trasforma in regole e lo esegue. Il team mantiene controllo e visibilità, ma non gestisce più il lavoro manuale."
+                : "Remvy takes a non-core, recurring and fragmented process, turns it into rules and executes it in the real world. The team keeps control and visibility, but no longer manages the manual work."}
             </p>
           </div>
 
@@ -87,14 +90,14 @@ const WhyRemvy = () => {
             <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
               {(isItalian
                 ? [
-                    ["Un workflow unico", "Regole, sourcing e delivery vivono nello stesso sistema."],
-                    ["Meno admin", "Meno coordinamento manuale tra team e fornitori."],
-                    ["Cultura più forte", "I momenti importanti diventano consistenti, visibili e intenzionali."],
+                    ["Meno lavoro non core", "Il team non perde tempo in task amministrativi ricorrenti."],
+                    ["Experience coerente", "Ogni employee riceve attenzione con lo stesso standard."],
+                    ["Cultura scalabile", "La cura non dipende più dalla memoria delle singole persone."],
                   ]
                 : [
-                    ["One workflow", "Rules, sourcing and delivery live in one system."],
-                    ["Less admin", "No more manual coordination across teams."],
-                    ["Stronger culture", "Important moments feel consistent, visible and intentional."],
+                    ["Less non-core work", "The team stops spending time on recurring admin tasks."],
+                    ["Consistent experience", "Every employee receives attention with the same standard."],
+                    ["Scalable culture", "Care no longer depends on individual memory."],
                   ]).map(([title, copy]) => (
                 <div key={title} className="rounded-2xl border border-border bg-background/35 p-4">
                   <p className="font-display text-lg font-bold text-foreground">{title}</p>

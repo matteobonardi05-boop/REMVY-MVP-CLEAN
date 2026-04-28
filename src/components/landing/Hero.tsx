@@ -8,37 +8,37 @@ const Hero = () => {
   const t = isItalian
     ? {
         moreCities: "More coming soon",
-        badge: "Recognition operations per team moderni",
-        line1: "Ricompensa e celebra",
-        line2: "i tuoi employee",
-        line3: "rendendo memorabili i momenti che contano",
-        subtitle: "Personalizzi una volta e Remvy gestisce sourcing, delivery, tracking e feedback.",
-        body: "Pensato per aziende che vogliono far crescere employee experience, cultura aziendale interna e qualità della vita di un employee.",
-        primary: "Prenota un pilot",
+        badge: "Employee moments operating system",
+        line1: "Tutti gli employee moments",
+        line2: "gestiti automaticamente",
+        line3: "senza perdite di tempo interne",
+        subtitle: "Carichi il team una volta, definisci le regole e Remvy gestisce reminder, tracking, sourcing, delivery e feedback.",
+        body: "Costruito per team attenti alla cultura interna che vogliono automatizzare l'intero processo e trasformare ogni employee moment in un experience costante, memorabile. Compleanni, onboarding, anniversari lavorativi e milestone funzionano in modo coerente senza dipendere da memoria, spreadsheet, chat o follow-up\u00A0interni.",
+        primary: "Attiva un pilot",
         secondary: "Guarda il workflow",
         proof: [
-          ["Nessun rollout software", "Funziona con HR tools, spreadsheet e workflow già in uso."],
-          ["Sourcing locale boutique", "Torte, fiori e gift selezionati per qualità, freschezza e cura."],
-          ["Visibilità operativa", "Budget, delivery e feedback tracciati in una dashboard unica."],
+          ["Non è un tool HR", "Si appoggia ai flussi esistenti e rimuove un processo operativo, invece di crearne uno nuovo."],
+          ["Non è solo gifting", "Il gift è l'output fisico. Il valore è coordinare regole, timing, fornitori e delivery."],
+          ["Sistema operativo", "Ogni momento viene tracciato, preparato, consegnato e misurato con lo stesso standard."],
         ],
-        note: "Copriamo onboarding, compleanni, anniversari, milestone e altri momenti chiave del percorso employee.",
+        note: "Ideale per team con più di 20 dipendenti, dove la gestione informale inizia a rompersi con la crescita.",
       }
     : {
         moreCities: "More coming soon",
-        badge: "Recognition operations for modern teams",
-        line1: "Recognize and celebrate",
-        line2: "your employees",
-        line3: "by making their moments unforgettable",
-        subtitle: "Personalize once and Remvy handles sourcing, delivery, tracking, and feedback.",
-        body: "Built for teams that care about employee experience, internal culture, and the day-to-day life of their people at work.",
-        primary: "Book a pilot",
+        badge: "Employee moments operating system",
+        line1: "Every employee moments",
+        line2: "handled automatically",
+        line3: "without internal time-waste",
+        subtitle: "Upload the team once, define the rules and Remvy handles reminders, tracking, sourcing, delivery and feedback.",
+        body: "Built for culture-oriented teams that want to automate the entire process and turn every employee moment into a consistent, memorable experience. Birthdays, onboarding, work anniversaries and milestones run consistently without relying on memory, spreadsheets, chats or internal follow-up.",
+        primary: "Start a pilot",
         secondary: "View the workflow",
         proof: [
-          ["No new software rollout", "Works with your HR tools, spreadsheets and existing workflow."],
-          ["Local boutique sourcing", "Cakes, flowers and gifts selected for quality, freshness and craft."],
-          ["Full operational visibility", "Budget, delivery and feedback tracked in one dashboard."],
+          ["Not an HR tool", "It sits on top of your current flow and removes an operational process instead of adding one."],
+          ["Not just gifting", "The gift is the physical output. The value is coordinating rules, timing, suppliers and delivery."],
+          ["Operating system", "Every moment is tracked, prepared, delivered and measured with the same standard."],
         ],
-        note: "Covers onboarding, birthdays, anniversaries, milestones and other key employee moments.",
+        note: "Ideal for teams with more than 20 employees, where informal coordination starts breaking as the company grows.",
       };
 
   return (
@@ -58,7 +58,7 @@ const Hero = () => {
       />
 
       <div className="relative mx-auto w-full max-w-[1240px] px-6 pb-24 pt-24 lg:px-10 lg:pb-36 lg:pt-32">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <div className="mb-5 flex flex-wrap items-center justify-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.18em]">
             {["Bologna", "Milano"].map((city) => (
               <span
@@ -79,17 +79,17 @@ const Hero = () => {
             {t.badge}
           </span>
 
-          <h1 className="mt-7 font-display text-[2.8rem] font-extrabold leading-[0.98] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[5.35rem]">
-            <span className="inline-block whitespace-nowrap">{t.line1}</span>
-            <span className="mt-2 block">{t.line2}</span>
-            <span className="mt-2 block text-accent text-glow">{t.line3}</span>
+          <h1 className="mt-7 font-display text-[1.82rem] font-extrabold leading-[1] tracking-tight text-foreground min-[390px]:text-[2.05rem] sm:text-5xl lg:text-[5.05rem]">
+            <span className="block whitespace-nowrap">{t.line1}</span>
+            <span className="mt-2 block whitespace-nowrap">{t.line2}</span>
+            <span className="-translate-x-3 mt-2 block whitespace-nowrap text-accent text-glow sm:-translate-x-5 lg:-translate-x-8">{t.line3}</span>
           </h1>
 
-          <p className="mx-auto mt-4 max-w-4xl text-base font-medium tracking-[0.02em] text-foreground/82 lg:text-lg">
+          <p className="mx-auto mt-5 max-w-[84rem] text-base font-medium tracking-[0.02em] text-foreground/82 lg:whitespace-nowrap lg:text-lg">
             {t.subtitle}
           </p>
 
-          <p className="mx-auto mt-6 max-w-[58ch] text-lg leading-relaxed text-muted-foreground text-pretty lg:text-[1.15rem]">
+          <p className="mx-auto mt-6 max-w-[112ch] text-lg leading-relaxed text-muted-foreground text-pretty lg:text-[1.05rem] xl:text-[1.12rem]">
             {t.body}
           </p>
 
@@ -117,9 +117,7 @@ const Hero = () => {
             ))}
           </div>
 
-          <p className="mt-6 text-sm text-muted-foreground">
-            {t.note}
-          </p>
+          <p className="mt-6 text-sm text-muted-foreground">{t.note}</p>
         </div>
 
         <div className="mt-20 lg:mt-28">

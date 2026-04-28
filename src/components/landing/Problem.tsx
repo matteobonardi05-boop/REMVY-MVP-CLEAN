@@ -5,27 +5,27 @@ import { useIsItalian } from "@/lib/locale";
 const enItems = [
   {
     icon: CalendarX,
-    label: "Missed moments",
-    title: "Important dates slip quietly",
-    body: "Without a dedicated system, birthdays, anniversaries and onboarding moments rely on memory and good intentions.",
-    impact: "Culture feels inconsistent",
-    points: ["No reminder with clear ownership", "No gift ordered on time", "No message prepared for the team"],
+    label: "Memory dependency",
+    title: "Important dates depend on whoever remembers",
+    body: "Birthdays, anniversaries, onboarding and personal moments often live in calendars, spreadsheets and people's heads.",
+    impact: "Moments slip or arrive late",
+    points: ["No single owner", "No operational trigger", "No clear deadline before delivery"],
   },
   {
     icon: Scale,
-    label: "Uneven experience",
-    title: "Recognition becomes visibly inconsistent",
-    body: "One team receives a thoughtful gesture, another gets something rushed, and someone else gets nothing at all.",
-    impact: "People compare the experience",
-    points: ["Managers improvise on the spot", "Budgets vary without logic", "Perceived fairness starts to erode"],
+    label: "Uneven execution",
+    title: "The experience changes from team to team",
+    body: "One manager sends something thoughtful, another improvises, and another team receives nothing because the process is informal.",
+    impact: "Culture starts feeling inconsistent",
+    points: ["Budgets vary without logic", "Messages feel rushed", "Fairness becomes harder to defend"],
   },
   {
     icon: EyeOff,
-    label: "Operational blind spots",
-    title: "Execution happens with no real visibility",
-    body: "Orders, approvals, suppliers and deliveries live across chats, spreadsheets and last-minute follow-ups.",
-    impact: "Hours disappear into admin",
-    points: ["No clean budget trail", "No delivery status in one place", "No way to improve the process over time"],
+    label: "Hidden admin",
+    title: "Small tasks quietly become a recurring workload",
+    body: "Someone has to decide what to do, coordinate purchase, manage suppliers, check delivery and close the loop every time.",
+    impact: "Hours disappear every month",
+    points: ["Chats and follow-ups multiply", "No clean budget trail", "No feedback loop to improve the process"],
   },
 ];
 
@@ -35,27 +35,27 @@ const Problem = () => {
     ? [
         {
           icon: CalendarX,
-          label: "Momenti persi",
-          title: "Le date importanti scivolano via",
-          body: "Senza un sistema dedicato, compleanni, anniversari e onboarding dipendono da memoria, calendario e buona volontà.",
-          impact: "La cultura risulta incoerente",
-          points: ["Nessun reminder con ownership chiara", "Gift non ordinato in tempo", "Messaggio per il team preparato all'ultimo"],
+          label: "Dipendenza dalla memoria",
+          title: "Le date importanti dipendono da chi se ne ricorda",
+          body: "Compleanni, anniversari, onboarding ed eventi personali spesso vivono tra calendari, spreadsheet e memoria delle persone.",
+          impact: "I momenti saltano o arrivano tardi",
+          points: ["Nessun owner unico", "Nessun trigger operativo", "Nessuna deadline chiara prima della delivery"],
         },
         {
           icon: Scale,
-          label: "Experience diseguale",
-          title: "La recognition diventa visibilmente incoerente",
-          body: "Un team riceve un gesto curato, un altro qualcosa di improvvisato, qualcun altro nulla.",
-          impact: "Le persone confrontano l'esperienza",
-          points: ["Manager costretti a improvvisare", "Budget diversi senza logica", "La percezione di equità si indebolisce"],
+          label: "Execution disomogenea",
+          title: "L'esperienza cambia da team a team",
+          body: "Un manager invia un gesto curato, un altro improvvisa, un altro team non riceve nulla perché il processo è informale.",
+          impact: "La cultura diventa incoerente",
+          points: ["Budget senza logica comune", "Messaggi preparati all'ultimo", "La percezione di equità diventa fragile"],
         },
         {
           icon: EyeOff,
-          label: "Blind spot operativi",
-          title: "L'execution avviene senza vera visibilità",
-          body: "Ordini, approvazioni, fornitori e consegne restano sparsi tra chat, spreadsheet e follow-up.",
-          impact: "Ore perse in admin",
-          points: ["Nessuna traccia budget pulita", "Delivery status non centralizzato", "Feedback difficile da usare per migliorare"],
+          label: "Admin nascosto",
+          title: "Piccoli task diventano un carico ricorrente",
+          body: "Qualcuno deve decidere cosa fare, coordinare l'acquisto, gestire fornitori, verificare la consegna e chiudere il loop ogni volta.",
+          impact: "Ore operative si perdono ogni mese",
+          points: ["Chat e follow-up aumentano", "Nessuna traccia budget pulita", "Feedback difficile da usare per migliorare"],
         },
       ]
     : enItems;
@@ -74,14 +74,13 @@ const Problem = () => {
               {isItalian ? "Il costo nascosto" : "The hidden cost"}
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-              {isItalian ? "La recognition manuale crea " : "Manual recognition creates "}
-              <span className="text-accent text-glow">{isItalian ? "attrito silenzioso" : "quiet friction"}</span>
-              {isItalian ? " ovunque." : " everywhere."}
+              {isItalian ? "Il problema non è il regalo. " : "The problem is not the gift. "}
+              <span className="text-accent text-glow">{isItalian ? "È il processo manuale." : "It is the manual process."}</span>
             </h2>
-            <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
+            <p className="mt-5 max-w-[66ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
               {isItalian
-                ? "Il problema raramente è l'intenzione. Il punto è il gap operativo tra voler mostrare attenzione e riuscire a consegnare ogni momento con la stessa cura."
-                : "The problem is rarely the intention. It is the operational gap between wanting to show appreciation and actually delivering every moment with the same care."}
+                ? "Il costo reale nasce quando qualcuno deve ricordare il momento, decidere cosa fare, coordinare l'acquisto, organizzare la consegna e assicurarsi che tutto sia coerente tra team."
+                : "The real cost appears when someone has to remember the moment, decide what to do, coordinate purchase, organize delivery and make sure the experience is consistent across teams."}
             </p>
           </div>
 
@@ -92,19 +91,19 @@ const Problem = () => {
             />
             <div className="relative">
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-                {isItalian ? "Quello che i team finiscono per pagare" : "What teams end up paying for"}
+                {isItalian ? "Esempio reale: 40 persone" : "Real example: 40 people"}
               </p>
               <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
                 {(isItalian
                   ? [
-                      ["Timing perso", "I momenti arrivano tardi o non arrivano"],
-                      ["Qualita diseguale", "La recognition dipende da chi se ne ricorda"],
-                      ["Overhead operativo", "Ore perse tra sourcing e follow-up"],
+                      ["3-5 compleanni/mese", "Da ricordare, ordinare e consegnare"],
+                      ["1-2 momenti extra", "Onboarding, anniversari o milestone"],
+                      ["Ore di coordinamento", "Chat, fornitori, budget e follow-up"],
                     ]
                   : [
-                      ["Missed timing", "Moments arrive late or not at all"],
-                      ["Uneven quality", "Recognition depends on who remembers"],
-                      ["Admin overhead", "Hours lost to sourcing and chasing"],
+                      ["3-5 birthdays/month", "To remember, order and deliver"],
+                      ["1-2 extra moments", "Onboarding, anniversaries or milestones"],
+                      ["Hours of coordination", "Chats, suppliers, budget and follow-up"],
                     ]).map(([title, copy]) => (
                   <div key={title} className="rounded-2xl border border-border bg-background/35 p-4">
                     <p className="font-display text-lg font-bold text-foreground">{title}</p>
@@ -136,9 +135,7 @@ const Problem = () => {
                   </span>
                 </div>
 
-                <h3 className="mt-7 font-display text-2xl font-bold leading-tight text-foreground">
-                  {title}
-                </h3>
+                <h3 className="mt-7 font-display text-2xl font-bold leading-tight text-foreground">{title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
 
                 <div className="mt-6 rounded-2xl border border-border bg-background/30 p-4">
@@ -158,7 +155,11 @@ const Problem = () => {
                 </div>
 
                 <div className="mt-7 flex items-center gap-2 text-sm font-medium text-foreground/80">
-                  <span>{isItalian ? "Piccole mancanze diventano un problema visibile di cultura" : "Small misses become a visible culture issue"}</span>
+                  <span>
+                    {isItalian
+                      ? "Remvy rimuove il micro-processo, non solo il singolo task"
+                      : "Remvy removes the micro-process, not just the single task"}
+                  </span>
                   <ArrowRight className="size-4 text-accent" strokeWidth={1.6} />
                 </div>
               </div>

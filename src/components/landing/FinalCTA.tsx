@@ -7,33 +7,33 @@ const FinalCTA = () => {
 
   const t = isItalian
     ? {
-        title: "Parti con un pilot.",
-        highlight: "Vedi il processo funzionare in 30 giorni.",
-        copy: "Configuriamo workflow, logica di gifting ed execution con gli strumenti che usi già, così il tuo team può approvare i momenti invece di gestirli manualmente.",
+        title: "Attiva un pilot operativo.",
+        highlight: "Dimostra il valore sui momenti reali del tuo team.",
+        copy: "Configuriamo Remvy sui tuoi employee, definiamo le regole per i momenti chiave e gestiamo concretamente execution, delivery e feedback per alcuni mesi.",
         primary: "Parla con Matteo",
         secondary: "Rivedi il workflow",
         founderTitle: "Parla con il founder",
-        founderCopy: "Un pilot seguito direttamente: obiettivi, momenti da coprire, gifting logic e operatività locale vengono definiti insieme.",
-        slots: "3 slot pilot disponibili per aziende a Bologna e Milano.",
+        founderCopy: "Vediamo insieme come funzionerebbe nel tuo caso: numero di employee, momenti da coprire, budget, kit, sedi e livello di personalizzazione.",
+        slots: "Pilot disponibili per aziende a Bologna e Milano.",
         cards: [
-          ["Nessuna migrazione", "Mantieni HR stack e processo onboarding attuali."],
-          ["Sourcing locale", "Usa boutique partner per qualità e freschezza superiori."],
-          ["Execution visibile", "Traccia budget, delivery e feedback in un'unica vista."],
+          ["Setup leggero", "CSV oggi, HRIS in arrivo. Nessuna installazione o migrazione richiesta."],
+          ["Modello trasparente", "Fee mensile per il sistema + costo per ogni kit eseguito."],
+          ["Decisione reversibile", "Dopo il pilot puoi continuare, modificare o interrompere."],
         ],
       }
     : {
-        title: "Start with a pilot.",
-        highlight: "See the process working in 30 days.",
-        copy: "We configure the workflow, align the gifting logic and run the execution with your current tools, so your team can approve moments instead of managing them manually.",
+        title: "Start an operational pilot.",
+        highlight: "Prove the value on your team's real moments.",
+        copy: "We configure Remvy around your employees, define the rules for key moments and run execution, delivery and feedback for a few months.",
         primary: "Talk to Matteo",
         secondary: "Review the workflow",
         founderTitle: "Talk to the founder",
-        founderCopy: "A founder-led pilot setup: goals, moments to cover, gifting logic and local execution are defined together.",
-        slots: "3 pilot spots available for Bologna and Milano companies.",
+        founderCopy: "We map how this would work in your specific case: employee count, moments to cover, budget, kits, locations and personalization level.",
+        slots: "Pilot spots available for Bologna and Milano companies.",
         cards: [
-          ["No migration", "Keep your current HR stack and onboarding process."],
-          ["Local sourcing", "Use boutique partners for better quality and freshness."],
-          ["Visible execution", "Track budget, delivery and feedback in one view."],
+          ["Light setup", "CSV today, HRIS coming soon. No installation or migration required."],
+          ["Transparent model", "Monthly system fee + cost for each executed kit."],
+          ["Reversible decision", "After the pilot you can continue, adjust or stop."],
         ],
       };
 

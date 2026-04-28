@@ -1,4 +1,4 @@
-import { Bell, DatabaseZap, LayoutDashboard, SlidersHorizontal, UserPlus } from "lucide-react";
+import { Bell, DatabaseZap, LayoutDashboard, SlidersHorizontal, Truck, UserPlus } from "lucide-react";
 
 import { useIsItalian } from "@/lib/locale";
 
@@ -6,26 +6,26 @@ const enSteps = [
   {
     n: 1,
     icon: UserPlus,
-    title: "Create your company workspace",
-    body: "Log in or register your company, then set the people, locations and approval owners who should manage recognition moments.",
+    title: "Upload the employee list once",
+    body: "Start with a CSV containing people, locations and relevant dates. HRIS sync is coming soon for daily workforce changes.",
   },
   {
     n: 2,
-    icon: DatabaseZap,
-    title: "Upload CSV or connect HRIS",
-    body: "Start with a CSV upload today. HRIS connections are coming soon, so Remvy can check workforce changes day by day and keep moments current.",
+    icon: SlidersHorizontal,
+    title: "Define rules for each moment",
+    body: "Set what happens for birthdays, onboarding, anniversaries, milestones and personal events: budget, kit, timing and approval logic.",
   },
   {
     n: 3,
-    icon: SlidersHorizontal,
-    title: "Personalize moments and gifting",
-    body: "Define birthdays, onboarding, anniversaries and milestones with budgets, gift tiers, notification windows and local delivery rules.",
+    icon: DatabaseZap,
+    title: "Remvy tracks upcoming moments",
+    body: "The system monitors dates, applies your rules and surfaces only what needs confirmation before the final lock window.",
   },
   {
     n: 4,
-    icon: LayoutDashboard,
-    title: "Track everything in the dashboard",
-    body: "See upcoming moments, delivery status, budget use, supplier execution and employee feedback in one operational view.",
+    icon: Truck,
+    title: "We execute and close the loop",
+    body: "Remvy sources locally, prepares the kit, manages physical delivery, supports the personal message and collects feedback.",
   },
 ];
 
@@ -36,26 +36,26 @@ const HowItWorks = () => {
         {
           n: 1,
           icon: UserPlus,
-          title: "Crea il workspace aziendale",
-          body: "Login o registrazione azienda, con sedi, referenti e owner delle approvazioni per gestire i momenti di recognition.",
+          title: "Carichi una volta la lista employee",
+          body: "Parti con un CSV con persone, sedi e date rilevanti. La sync HRIS è in arrivo per aggiornare giorno dopo giorno cambiamenti e ingressi.",
         },
         {
           n: 2,
-          icon: DatabaseZap,
-          title: "Carica CSV o collega l'HRIS",
-          body: "Parti subito con CSV. Le connessioni HRIS sono in arrivo per controllare giorno dopo giorno cambiamenti, ingressi e date importanti.",
+          icon: SlidersHorizontal,
+          title: "Definisci le regole per ogni momento",
+          body: "Stabilisci cosa succede per compleanni, onboarding, anniversari, milestone ed eventi personali: budget, kit, timing e approvazioni.",
         },
         {
           n: 3,
-          icon: SlidersHorizontal,
-          title: "Personalizza momenti e gifting",
-          body: "Definisci compleanni, onboarding, anniversari e milestone con budget, gift tier, notifiche e regole locali di delivery.",
+          icon: DatabaseZap,
+          title: "Remvy traccia i momenti in arrivo",
+          body: "Il sistema monitora le date, applica le regole e mostra solo ciò che va confermato prima della finestra finale.",
         },
         {
           n: 4,
-          icon: LayoutDashboard,
-          title: "Monitora tutto dalla dashboard",
-          body: "Vedi momenti futuri, delivery status, budget, supplier execution e feedback employee in un'unica vista operativa.",
+          icon: Truck,
+          title: "Eseguiamo e chiudiamo il loop",
+          body: "Remvy seleziona fornitori locali, prepara il kit, gestisce delivery fisica, supporta il messaggio personalizzato e raccoglie feedback.",
         },
       ]
     : enSteps;
@@ -75,32 +75,32 @@ const HowItWorks = () => {
             </span>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
               <span className="block">{isItalian ? "Lo imposti una volta." : "Set it once."}</span>
-              <span className="mt-2 block text-accent text-glow">
-                {isItalian ? "Remvy gestisce il resto." : "Remvy handles the rest."}
+              <span className="mt-2 block whitespace-nowrap text-accent text-glow">
+                {isItalian ? "Remvy lo esegue ogni volta." : "Remvy executes every time."}
               </span>
             </h2>
-            <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
+            <p className="mt-5 max-w-[66ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
               {isItalian
-                ? "Dal setup aziendale alla raccolta feedback, Remvy trasforma task di recognition frammentati in un workflow ripetibile e controllabile dal People team."
-                : "From company setup to feedback collection, Remvy turns scattered recognition tasks into a repeatable workflow your People team can actually control."}
+                ? "Il team non deve più ricordare date, scegliere fornitori, ordinare gift o rincorrere conferme. Remvy diventa il layer operativo sopra i processi che già usi."
+                : "Your team no longer has to remember dates, choose suppliers, order gifts or chase confirmations. Remvy becomes the operating layer on top of the processes you already use."}
             </p>
           </div>
 
           <div className="rounded-[28px] border border-border-strong bg-card/90 p-6 shadow-soft">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-              {isItalian ? "Operating layer" : "Operating layer"}
+              {isItalian ? "Cosa sparisce" : "What disappears"}
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
               {(isItalian
                 ? [
-                    ["Sempre aggiornato", "CSV oggi, HRIS sync in arrivo, con cambiamenti del personale riflessi nel tempo."],
-                    ["Execution basata su regole", "Budget, gift e approvazioni seguono il playbook definito."],
-                    ["Outcome visibili", "Budget, delivery, qualità fornitori e feedback vivono nello stesso workflow."],
+                    ["Reminder manuali", "Le date vengono tracciate dal sistema."],
+                    ["Coordinamento interno", "Regole, budget e approval sono già definiti."],
+                    ["Follow-up fornitori", "Sourcing, kit e delivery sono gestiti da Remvy."],
                   ]
                 : [
-                    ["Always current", "CSV today, HRIS sync soon, with employee changes reflected over time."],
-                    ["Rule-based execution", "Budgets, gifts and approval timing follow the playbook you define."],
-                    ["Visible outcomes", "Budget, delivery, supplier quality and feedback live in one workflow."],
+                    ["Manual reminders", "Dates are tracked by the system."],
+                    ["Internal coordination", "Rules, budgets and approvals are already defined."],
+                    ["Supplier chasing", "Sourcing, kits and delivery are handled by Remvy."],
                   ]).map(([title, copy]) => (
                 <div key={title} className="rounded-2xl border border-border bg-background/35 p-4">
                   <p className="font-display text-lg font-bold text-foreground">{title}</p>
@@ -122,23 +122,23 @@ const HowItWorks = () => {
               const Icon = step.icon;
 
               return (
-              <div
-                key={step.n}
-                className="relative rounded-[28px] border border-border-strong bg-card/95 p-7 shadow-soft"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="inline-flex size-14 items-center justify-center rounded-full border border-accent/40 bg-accent/10 shadow-glow">
-                    <Icon className="size-6 text-accent" strokeWidth={1.6} />
+                <div
+                  key={step.n}
+                  className="relative rounded-[28px] border border-border-strong bg-card/95 p-7 shadow-soft"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="inline-flex size-14 items-center justify-center rounded-full border border-accent/40 bg-accent/10 shadow-glow">
+                      <Icon className="size-6 text-accent" strokeWidth={1.6} />
+                    </div>
+                    <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                      Step {step.n}
+                    </span>
                   </div>
-                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                    Step {step.n}
-                  </span>
+                  <h3 className="mt-6 font-display text-2xl font-bold leading-tight text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
                 </div>
-                <h3 className="mt-6 font-display text-2xl font-bold leading-tight text-foreground">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
-              </div>
               );
             })}
           </div>
@@ -151,33 +151,33 @@ const HowItWorks = () => {
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold leading-tight text-foreground">
               {isItalian
-                ? "Remvy tiene il workflow attivo prima che ogni ordine venga confermato."
-                : "Remvy keeps the workflow moving before each order is locked."}
+                ? "Solo le conferme utili arrivano al team."
+                : "Only useful confirmations reach the team."}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               {isItalian
-                ? "Reminder personalizzabili possono partire 7, 5 e 2 giorni prima della delivery, così ogni ordine può essere confermato, modificato o annullato prima della finestra finale."
-                : "Customizable reminders can be sent 7, 5 and 2 days before delivery, so each order can be confirmed, adjusted or cancelled before the final lock window."}
+                ? "Le notifiche personalizzabili possono partire 7, 5 e 2 giorni prima della delivery. Due giorni prima è l'ultima finestra per modificare o annullare; poi l'ordine viene confermato."
+                : "Customizable notifications can be sent 7, 5 and 2 days before delivery. Two days before is the last edit or cancellation window; after that, the order is confirmed."}
             </p>
           </div>
 
           <div className="rounded-[28px] border border-border-strong bg-card/95 p-7 shadow-soft">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-              {isItalian ? "Dashboard visibility" : "Dashboard visibility"}
+              {isItalian ? "Dashboard operativa" : "Operational dashboard"}
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {(isItalian
                 ? [
                     "Momenti employee in arrivo",
-                    "Pacchetti gift e regole di personalizzazione",
-                    "Delivery e supplier status",
-                    "Budget utilizzato e feedback employee",
+                    "Regole, kit e personalizzazione",
+                    "Delivery e stato fornitori",
+                    "Budget usato e livello di gradimento",
                   ]
                 : [
                     "Upcoming employee moments",
-                    "Gift package and personalization rules",
+                    "Rules, kits and personalization",
                     "Delivery and supplier status",
-                    "Budget use and employee feedback",
+                    "Budget use and feedback level",
                   ]).map((item) => (
                 <div key={item} className="rounded-2xl border border-border bg-background/35 px-4 py-3">
                   <p className="text-sm font-medium leading-relaxed text-foreground/90">{item}</p>

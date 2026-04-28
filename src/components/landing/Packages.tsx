@@ -386,18 +386,18 @@ const Packages = () => {
       <div className="mx-auto w-full max-w-[1240px] px-6 py-28 lg:px-10 lg:py-40">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex rounded-full border border-border-strong bg-card/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            {isItalian ? "Cosa offriamo" : "What we offer"}
+            {isItalian ? "Execution fisica" : "Physical execution"}
           </span>
           <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
-            <span className="block">{isItalian ? "Pacchetti personalizzabili" : "Customizable packages"}</span>
+            <span className="block">{isItalian ? "I kit sono l'output." : "The kits are the output."}</span>
             <span className="mt-2 block text-accent text-glow">
-              {isItalian ? "per ogni momento employee importante" : "for every important employee moment"}
+              {isItalian ? "Il sistema è il valore." : "The system is the value."}
             </span>
           </h2>
           <p className="mx-auto mt-5 max-w-[64ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
             {isItalian
-              ? "Scegli tra una selezione di gifting fisico curata con boutique locali per rendere speciali i momenti più importanti dei tuoi employee."
-              : "Choose from our physical gifting selection, sourced from local boutiques to make the most important employee moments feel special."}
+              ? "Remvy trasforma regole, budget e momenti employee in kit fisici curati, consegnati in tempo e gestiti tramite boutique locali."
+              : "Remvy turns rules, budgets and employee moments into curated physical kits, delivered on time and managed through local boutiques."}
           </p>
         </div>
 
@@ -405,12 +405,12 @@ const Packages = () => {
           <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-                {isItalian ? "Esplora l'offerta" : "Scroll through the offer"}
+                {isItalian ? "Componenti disponibili" : "Available components"}
               </p>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 {isItalian
-                  ? "Ogni categoria ha una visual identity chiara e una percezione più concreta di prodotto, così la sezione comunica un'offerta reale."
-                  : "Each category has a clearer visual identity and a stronger product feeling, so the section reads as an offer, not as abstract copy."}
+                  ? "Torte, fiori, gadget e merch non sono un catalogo separato: sono componenti che Remvy combina automaticamente secondo le regole del tuo playbook."
+                  : "Cakes, flowers, gadgets and merch are not a separate catalogue: they are components Remvy combines automatically according to your playbook rules."}
               </p>
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
