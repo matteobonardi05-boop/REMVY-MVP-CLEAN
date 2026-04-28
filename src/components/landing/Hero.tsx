@@ -79,10 +79,10 @@ const Hero = () => {
             {t.badge}
           </span>
 
-          <h1 className="mt-7 font-display text-[1.82rem] font-extrabold leading-[1] tracking-tight text-foreground min-[390px]:text-[2.05rem] sm:text-5xl lg:text-[5.05rem]">
+          <h1 className="mt-7 font-display text-[clamp(1.55rem,6.4vw,2.45rem)] font-extrabold leading-[1] tracking-tight text-foreground sm:text-5xl lg:text-[5.05rem]">
             <span className="block whitespace-nowrap">{t.line1}</span>
             <span className="mt-2 block whitespace-nowrap">{t.line2}</span>
-            <span className="-translate-x-3 mt-2 block whitespace-nowrap text-accent text-glow sm:-translate-x-5 lg:-translate-x-8">{t.line3}</span>
+            <span className="mt-2 block whitespace-nowrap text-accent text-glow sm:-translate-x-5 lg:-translate-x-8">{t.line3}</span>
           </h1>
 
           <p className="mx-auto mt-5 max-w-[84rem] text-base font-medium tracking-[0.02em] text-foreground/82 lg:whitespace-nowrap lg:text-lg">
@@ -108,9 +108,9 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="mt-8 grid gap-3 text-sm sm:grid-cols-3">
+          <div className="mt-8 flex max-w-full snap-x gap-3 overflow-x-auto pb-2 text-sm sm:grid sm:grid-cols-3 sm:overflow-visible sm:pb-0">
             {t.proof.map(([title, copy]) => (
-              <div key={title} className="rounded-2xl border border-border bg-card/80 px-4 py-4 text-left shadow-soft">
+              <div key={title} className="min-w-[78%] snap-center rounded-2xl border border-border bg-card/80 px-4 py-4 text-left shadow-soft sm:min-w-0">
                 <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">{title}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p>
               </div>

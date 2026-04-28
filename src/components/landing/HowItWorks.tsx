@@ -67,15 +67,15 @@ const HowItWorks = () => {
         aria-hidden
       />
 
-      <div className="mx-auto w-full max-w-[1240px] px-6 py-28 lg:px-10 lg:py-40">
+      <div className="mx-auto w-full max-w-[1240px] px-6 py-16 lg:px-10 lg:py-40">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-end xl:gap-16">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full border border-border-strong bg-card/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
               {isItalian ? "Set it once" : "Set it once"}
             </span>
-            <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
+            <h2 className="mt-5 font-display text-[clamp(2rem,9vw,2.45rem)] font-extrabold leading-[1.02] tracking-tight text-foreground sm:text-4xl lg:text-6xl">
               <span className="block">{isItalian ? "Lo imposti una volta." : "Set it once."}</span>
-              <span className="mt-2 block whitespace-nowrap text-accent text-glow">
+              <span className="mt-2 block text-accent text-glow sm:whitespace-nowrap">
                 {isItalian ? "Remvy lo esegue ogni volta." : "Remvy executes every time."}
               </span>
             </h2>
@@ -117,14 +117,14 @@ const HowItWorks = () => {
             aria-hidden
           />
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="flex max-w-full snap-x gap-5 overflow-x-auto pb-2 md:grid md:grid-cols-2 md:overflow-visible md:pb-0 lg:grid-cols-4">
             {steps.map((step) => {
               const Icon = step.icon;
 
               return (
                 <div
                   key={step.n}
-                  className="relative rounded-[28px] border border-border-strong bg-card/95 p-7 shadow-soft"
+                  className="relative min-w-[82%] snap-center rounded-[28px] border border-border-strong bg-card/95 p-6 shadow-soft sm:min-w-[48%] md:min-w-0 lg:p-7"
                 >
                   <div className="flex items-center gap-4">
                     <div className="inline-flex size-14 items-center justify-center rounded-full border border-accent/40 bg-accent/10 shadow-glow">

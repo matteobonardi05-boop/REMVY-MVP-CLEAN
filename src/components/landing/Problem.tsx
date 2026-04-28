@@ -67,13 +67,13 @@ const Problem = () => {
         aria-hidden
       />
 
-      <div className="mx-auto w-full max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto w-full max-w-[1240px] px-6 py-16 lg:px-10 lg:py-32">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.75fr)] lg:items-end">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full border border-border-strong bg-surface/70 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
               {isItalian ? "Il costo nascosto" : "The hidden cost"}
             </span>
-            <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
+            <h2 className="mt-5 font-display text-[clamp(2rem,9vw,2.45rem)] font-extrabold leading-[1.02] tracking-tight text-foreground sm:text-4xl lg:text-6xl">
               {isItalian ? "Il problema non è il regalo. " : "The problem is not the gift. "}
               <span className="text-accent text-glow">{isItalian ? "È il processo manuale." : "It is the manual process."}</span>
             </h2>
@@ -115,11 +115,11 @@ const Problem = () => {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-3">
+        <div className="mt-10 flex max-w-full snap-x gap-5 overflow-x-auto pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
           {items.map(({ icon: Icon, label, title, body, impact, points }) => (
             <div
               key={title}
-              className="group relative overflow-hidden rounded-[28px] border border-border bg-card/95 p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-glow"
+              className="group relative min-w-[84%] snap-center overflow-hidden rounded-[28px] border border-border bg-card/95 p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-glow sm:min-w-[52%] lg:min-w-0 lg:p-7"
             >
               <div
                 className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,hsl(var(--accent)/0.14),transparent_55%)]"

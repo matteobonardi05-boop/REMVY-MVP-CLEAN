@@ -74,10 +74,14 @@
 
   html {
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground;
+    width: 100%;
+    overflow-x: hidden;
     font-family: "DM Sans", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -85,6 +89,11 @@
       radial-gradient(circle at top, hsl(var(--accent) / 0.08), transparent 34%),
       radial-gradient(circle at 85% 10%, hsl(12 70% 72% / 0.08), transparent 24%);
     background-attachment: fixed;
+  }
+
+  #root {
+    width: 100%;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {

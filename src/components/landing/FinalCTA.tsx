@@ -45,8 +45,8 @@ const FinalCTA = () => {
       />
       <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
 
-      <div className="relative mx-auto w-full max-w-[1240px] px-6 py-28 text-center lg:px-10 lg:py-36">
-        <h2 className="mx-auto max-w-3xl font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground text-balance lg:text-6xl">
+      <div className="relative mx-auto w-full max-w-[1240px] px-6 py-16 text-center lg:px-10 lg:py-36">
+        <h2 className="mx-auto max-w-3xl font-display text-[clamp(2rem,9vw,2.45rem)] font-extrabold leading-[1.05] tracking-tight text-foreground text-balance sm:text-4xl lg:text-6xl">
           <span className="block">{t.title}</span>
           <span className="mt-2 block text-accent text-glow">{t.highlight}</span>
         </h2>
@@ -97,9 +97,9 @@ const FinalCTA = () => {
           </div>
         </div>
 
-        <div className="mx-auto mt-8 grid max-w-4xl gap-3 text-left sm:grid-cols-3">
+        <div className="mx-auto mt-8 flex max-w-full snap-x gap-3 overflow-x-auto pb-2 text-left sm:grid sm:max-w-4xl sm:grid-cols-3 sm:overflow-visible sm:pb-0">
           {t.cards.map(([title, copy]) => (
-            <div key={title} className="rounded-2xl border border-border bg-card/75 px-4 py-4 shadow-soft">
+            <div key={title} className="min-w-[78%] snap-center rounded-2xl border border-border bg-card/75 px-4 py-4 shadow-soft sm:min-w-0">
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">{title}</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p>
             </div>

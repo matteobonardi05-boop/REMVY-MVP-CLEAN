@@ -383,12 +383,12 @@ const Packages = () => {
         aria-hidden
       />
 
-      <div className="mx-auto w-full max-w-[1240px] px-6 py-28 lg:px-10 lg:py-40">
+      <div className="mx-auto w-full max-w-[1240px] px-6 py-16 lg:px-10 lg:py-40">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex rounded-full border border-border-strong bg-card/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
             {isItalian ? "Execution fisica" : "Physical execution"}
           </span>
-          <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-foreground lg:text-6xl">
+          <h2 className="mt-5 font-display text-[clamp(2rem,9vw,2.45rem)] font-extrabold leading-[1.02] tracking-tight text-foreground sm:text-4xl lg:text-6xl">
             <span className="block">{isItalian ? "I kit sono l'output." : "The kits are the output."}</span>
             <span className="mt-2 block text-accent text-glow">
               {isItalian ? "Il sistema è il valore." : "The system is the value."}
@@ -401,7 +401,7 @@ const Packages = () => {
           </p>
         </div>
 
-        <div className="mt-16 rounded-[32px] border border-border-strong bg-card/88 px-5 py-8 shadow-elegant backdrop-blur lg:px-8">
+        <div className="mt-10 rounded-[32px] border border-border-strong bg-card/88 px-5 py-8 shadow-elegant backdrop-blur lg:mt-16 lg:px-8">
           <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
@@ -446,7 +446,7 @@ const Packages = () => {
                           <Icon className="mt-1 size-5 text-accent" strokeWidth={1.7} />
                         </div>
 
-                        <h3 className="mt-6 font-display text-3xl font-bold leading-tight text-foreground">
+                        <h3 className="mt-6 font-display text-[clamp(1.85rem,8vw,2.25rem)] font-bold leading-tight text-foreground lg:text-3xl">
                           {offer.title}
                         </h3>
                         <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground lg:text-base">
@@ -476,30 +476,30 @@ const Packages = () => {
           </Carousel>
         </div>
 
-        <div className="mt-20 grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
-          <div className="rounded-[30px] border border-border-strong bg-card/92 p-7 shadow-soft">
+        <div className="mt-14 grid gap-5 lg:mt-20 lg:grid-cols-[0.88fr_1.12fr] lg:gap-8">
+          <div className="rounded-[28px] border border-border-strong bg-card/92 p-5 shadow-soft sm:p-7 lg:rounded-[30px]">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
               {isItalian ? "Combinazioni esempio" : "Example combinations"}
             </p>
-            <h3 className="mt-4 font-display text-3xl font-bold leading-tight text-foreground">
+            <h3 className="mt-4 font-display text-[clamp(1.75rem,7.4vw,2.15rem)] font-bold leading-tight text-foreground lg:text-3xl">
               <span className="block">{isItalian ? "Combinazioni signature" : "Signature combinations"}</span>
               <span className="mt-2 block text-accent text-glow">
                 {isItalian ? "per ogni momento chiave" : "for every key moment"}
               </span>
             </h3>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground lg:text-base">
+            <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground sm:text-sm lg:text-base">
               {isItalian
                 ? "Scegli un momento per vedere delle combinazioni esempio. La struttura resta modificabile a piacimento, ma i pacchetti evitano di fornire un catalogo gifting separato e ridondante."
                 : "Choose a moment below to preview example combinations. The section stays visual, but the structure is clearer and less repetitive than having a separate gifting catalogue."}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-2.5">
+            <div className="mt-7 flex flex-wrap gap-2">
               {localizedTabs.map((tab) => (
                 <button
                   key={tab.key}
                   type="button"
                   onClick={() => setActiveOccasion(tab.key)}
-                  className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+                  className={`rounded-full border px-3.5 py-2 text-sm font-medium transition-all sm:px-4 ${
                     activeOccasion === tab.key
                       ? "border-accent/40 bg-accent text-accent-foreground shadow-cta"
                       : "border-border-strong bg-surface/60 text-foreground hover:bg-surface"
@@ -511,45 +511,45 @@ const Packages = () => {
             </div>
           </div>
 
-          <div className="rounded-[30px] border border-border-strong bg-card/95 p-7 shadow-elegant">
+          <div className="rounded-[28px] border border-border-strong bg-card/95 p-5 shadow-elegant sm:p-7 lg:rounded-[30px]">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
                   {currentOccasion.label}
                 </p>
-                <h3 className="mt-3 max-w-2xl font-display text-3xl font-bold leading-tight text-foreground">
+                <h3 className="mt-3 max-w-2xl font-display text-[clamp(1.65rem,7vw,2.1rem)] font-bold leading-tight text-foreground lg:text-3xl">
                   {currentOccasion.title}
                 </h3>
               </div>
-              <BadgeCheck className="size-9 text-accent" strokeWidth={1.7} />
+              <BadgeCheck className="hidden size-9 text-accent sm:block" strokeWidth={1.7} />
             </div>
 
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground lg:text-base">
+            <p className="mt-4 max-w-2xl text-[13px] leading-relaxed text-muted-foreground sm:text-sm lg:text-base">
               {currentOccasion.intro}
             </p>
 
-            <div className="mt-8 grid gap-4 xl:grid-cols-2">
+            <div className="mt-6 grid gap-3 xl:mt-8 xl:grid-cols-2 xl:gap-4">
               {currentOccasion.packs.map((pack) => (
-                <div key={pack.name} className="rounded-[26px] border border-border bg-background/25 p-5">
-                  <p className="font-display text-xl font-bold text-foreground">{pack.name}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                <div key={pack.name} className="rounded-[22px] border border-border bg-background/25 p-4 xl:rounded-[26px] xl:p-5">
+                  <p className="font-display text-lg font-bold leading-tight text-foreground xl:text-xl">{pack.name}</p>
+                  <div className="mt-3 flex flex-wrap gap-1.5 xl:mt-4 xl:gap-2">
                     {pack.items.map((item) => (
                       <span
                         key={item}
-                        className="rounded-full border border-border-strong bg-surface/70 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-foreground/85"
+                        className="rounded-full border border-border-strong bg-surface/70 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-foreground/85 sm:text-xs xl:px-3 xl:py-1.5 xl:tracking-[0.16em]"
                       >
                         {item}
                       </span>
                     ))}
                   </div>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{pack.note}</p>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm xl:mt-4">{pack.note}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-16 rounded-[32px] border border-border-strong bg-[linear-gradient(135deg,hsl(var(--accent)/0.12),transparent_55%)] p-7 shadow-soft lg:p-9">
+        <div className="mt-12 rounded-[32px] border border-border-strong bg-[linear-gradient(135deg,hsl(var(--accent)/0.12),transparent_55%)] p-6 shadow-soft lg:mt-16 lg:p-9">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
             <div>
               <p className="inline-flex items-center gap-2 rounded-full border border-border-strong bg-card/70 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
@@ -562,7 +562,7 @@ const Packages = () => {
                   {isItalian ? "Sourcing curato da Remvy" : "Remvy curated sourcing"}
                 </span>
               </div>
-              <h3 className="mt-5 font-display text-3xl font-bold leading-tight text-foreground lg:text-4xl">
+              <h3 className="mt-5 font-display text-[clamp(1.85rem,8vw,2.25rem)] font-bold leading-tight text-foreground lg:text-4xl">
                 {isItalian
                   ? "Lavoriamo con boutique locali per proteggere qualità, freschezza e artigianalità."
                   : "We work with local boutiques to protect quality, freshness and craft."}
@@ -574,7 +574,7 @@ const Packages = () => {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="flex max-w-full snap-x gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0">
               {[
                 ...(isItalian
                   ? [
@@ -590,7 +590,7 @@ const Packages = () => {
                       ["Local impact", "Recognition supports local businesses and makers."],
                     ]),
               ].map(([title, copy]) => (
-                <div key={title} className="rounded-[26px] border border-border bg-card/90 p-5">
+                <div key={title} className="min-w-[78%] snap-center rounded-[26px] border border-border bg-card/90 p-5 sm:min-w-0">
                   <p className="font-display text-xl font-bold text-foreground">{title}</p>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p>
                 </div>
