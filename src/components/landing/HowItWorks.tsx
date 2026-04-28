@@ -68,7 +68,7 @@ const HowItWorks = () => {
       />
 
       <div className="mx-auto w-full max-w-[1240px] px-6 py-28 lg:px-10 lg:py-40">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-end">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-end xl:gap-16">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full border border-border-strong bg-card/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
               {isItalian ? "Set it once" : "Set it once"}
@@ -86,7 +86,7 @@ const HowItWorks = () => {
             </p>
           </div>
 
-          <div className="rounded-[28px] border border-border-strong bg-card/90 p-6 shadow-soft">
+          <div className="rounded-[28px] border border-border-strong bg-card/90 p-6 shadow-soft lg:translate-x-6 xl:translate-x-8">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
               {isItalian ? "Cosa sparisce" : "What disappears"}
             </p>
