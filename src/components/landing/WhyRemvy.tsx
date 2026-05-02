@@ -8,10 +8,7 @@ const enRows = [
   { label: "Local physical delivery", values: [false, false, false, true] },
   { label: "Works with existing tools", values: [true, false, true, true] },
   { label: "Budget and feedback visibility", values: [false, false, true, true] },
-  { label: "No IT rollout required", values: [true, true, false, true] },
 ];
-
-const enColumns = ["Manual", "Gifting service", "HR software", "Remvy"];
 
 const Cell = ({ value, accent }: { value: boolean | string; accent?: boolean }) => {
   if (value === true) {
@@ -25,13 +22,6 @@ const Cell = ({ value, accent }: { value: boolean | string; accent?: boolean }) 
   return <span className="text-xs font-medium text-muted-foreground">{value}</span>;
 };
 
-const enSummary = [
-  { label: "Manual", note: "Depends on people remembering" },
-  { label: "Gifting service", note: "Solves the object, not the process" },
-  { label: "HR software", note: "Stores data, adds implementation" },
-  { label: "Remvy", note: "Removes the operating workload", accent: true },
-];
-
 const WhyRemvy = () => {
   const isItalian = useIsItalian();
   const rows = isItalian
@@ -40,19 +30,23 @@ const WhyRemvy = () => {
         { label: "Execution inclusa", values: [false, "Parziale", false, true] },
         { label: "Delivery fisica locale", values: [false, false, false, true] },
         { label: "Lavora con i tool esistenti", values: [true, false, true, true] },
-        { label: "Visibilità su budget e feedback", values: [false, false, true, true] },
-        { label: "Nessun rollout IT richiesto", values: [true, true, false, true] },
+        { label: "Visibilità budget e feedback", values: [false, false, true, true] },
       ]
     : enRows;
-  const columns = isItalian ? ["Manuale", "Servizio gift", "HR software", "Remvy"] : enColumns;
+  const columns = isItalian ? ["Manuale", "Servizio gift", "HR software", "Remvy"] : ["Manual", "Gifting service", "HR software", "Remvy"];
   const summary = isItalian
     ? [
-        { label: "Manuale", note: "Dipende da chi se ne ricorda" },
-        { label: "Servizio gift", note: "Risolve l'oggetto, non il processo" },
-        { label: "HR software", note: "Archivia dati, richiede implementazione" },
-        { label: "Remvy", note: "Rimuove il carico operativo", accent: true },
+        { label: "Manuale", note: "Dipende dalla memoria" },
+        { label: "Servizio gift", note: "Risolve solo l'oggetto" },
+        { label: "HR software", note: "Archivia dati" },
+        { label: "Remvy", note: "Rimuove il lavoro operativo", accent: true },
       ]
-    : enSummary;
+    : [
+        { label: "Manual", note: "Depends on memory" },
+        { label: "Gifting service", note: "Solves only the object" },
+        { label: "HR software", note: "Stores data" },
+        { label: "Remvy", note: "Removes operating work", accent: true },
+      ];
 
   return (
     <section id="why" className="relative border-t border-border">
@@ -61,25 +55,23 @@ const WhyRemvy = () => {
         aria-hidden
       />
 
-      <div className="mx-auto w-full max-w-[1240px] px-6 py-16 lg:px-10 lg:py-40">
+      <div className="mx-auto w-full max-w-[1240px] px-6 py-16 lg:px-10 lg:py-32">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-end">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full border border-border-strong bg-surface/70 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              {isItalian ? "Operational system" : "Operational system"}
+              {isItalian ? "Sistema operativo" : "Operating system"}
             </span>
-            <h2 className="mt-5 font-display text-[clamp(2rem,9vw,2.45rem)] font-extrabold leading-[1.02] tracking-tight text-foreground sm:text-4xl lg:text-6xl">
-              <span className="block">{isItalian ? "Non un tool HR." : "Not an HR tool."}</span>
-              <span className="mt-2 block">
-                {isItalian ? "Non un servizio di gifting." : "Not a gifting service."}
-              </span>
+            <h2 className="mt-5 font-display text-[clamp(2rem,9vw,3.6rem)] font-extrabold leading-[1.02] tracking-tight text-foreground">
+              <span className="block text-accent text-glow">{isItalian ? "Non un tool HR." : "Not an HR tool."}</span>
+              <span className="mt-2 block">{isItalian ? "Non un servizio gift." : "Not a gifting service."}</span>
               <span className="mt-2 block text-accent text-glow">
                 {isItalian ? "Un layer operativo." : "An operating layer."}
               </span>
             </h2>
-            <p className="mt-5 max-w-[66ch] text-base leading-relaxed text-muted-foreground lg:text-lg">
+            <p className="mt-5 max-w-[56ch] text-base leading-relaxed text-muted-foreground">
               {isItalian
-                ? "Remvy prende un processo non core, ripetitivo e frammentato, lo trasforma in regole e lo esegue. Il team mantiene controllo e visibilità, ma non gestisce più il lavoro manuale."
-                : "Remvy takes a non-core, recurring and fragmented process, turns it into rules and executes it in the real world. The team keeps control and visibility, but no longer manages the manual work."}
+                ? "Remvy trasforma un processo frammentato in regole, execution e visibilità."
+                : "Remvy turns a fragmented process into rules, execution and visibility."}
             </p>
           </div>
 
@@ -90,14 +82,14 @@ const WhyRemvy = () => {
             <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
               {(isItalian
                 ? [
-                    ["Meno lavoro non core", "Il team non perde tempo in task amministrativi ricorrenti."],
-                    ["Experience coerente", "Ogni employee riceve attenzione con lo stesso standard."],
-                    ["Cultura scalabile", "La cura non dipende più dalla memoria delle singole persone."],
+                    ["Meno lavoro non core", "Il team evita task ricorrenti."],
+                    ["Experience coerente", "Ogni employee riceve lo stesso standard."],
+                    ["Cultura scalabile", "La cura non dipende dalla memoria."],
                   ]
                 : [
-                    ["Less non-core work", "The team stops spending time on recurring admin tasks."],
-                    ["Consistent experience", "Every employee receives attention with the same standard."],
-                    ["Scalable culture", "Care no longer depends on individual memory."],
+                    ["Less non-core work", "The team avoids recurring admin."],
+                    ["Consistent experience", "Every employee receives one standard."],
+                    ["Scalable culture", "Care no longer depends on memory."],
                   ]).map(([title, copy]) => (
                 <div key={title} className="rounded-2xl border border-border bg-background/35 p-4">
                   <p className="font-display text-lg font-bold text-foreground">{title}</p>
@@ -108,11 +100,11 @@ const WhyRemvy = () => {
           </div>
         </div>
 
-        <div className="mt-10 flex max-w-full snap-x gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-4 md:overflow-visible md:pb-0">
+        <div className="mt-10 grid gap-4 md:grid-cols-4">
           {summary.map((item) => (
             <div
               key={item.label}
-              className={`min-w-[72%] snap-center rounded-[24px] border p-5 sm:min-w-[42%] md:min-w-0 ${
+              className={`rounded-[24px] border p-5 ${
                 item.accent ? "border-accent/50 bg-accent/10 shadow-glow" : "border-border bg-card/90 shadow-soft"
               }`}
             >

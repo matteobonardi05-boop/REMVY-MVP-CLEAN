@@ -8,12 +8,12 @@ const FinalCTA = () => {
   const t = isItalian
     ? {
         title: "Attiva un pilot operativo.",
-        highlight: "Dimostra il valore sui momenti reali del tuo team.",
-        copy: "Configuriamo Remvy sui tuoi employee, definiamo le regole per i momenti chiave e gestiamo concretamente execution, delivery e feedback per alcuni mesi.",
+        highlight: "Comincia a migliorare i momenti del tuo team.",
+        copy: "Configuriamo regole, kit, delivery e feedback per il tuo pilot.",
         primary: "Parla con Matteo",
         secondary: "Rivedi il workflow",
         founderTitle: "Parla con il founder",
-        founderCopy: "Vediamo insieme come funzionerebbe nel tuo caso: numero di employee, momenti da coprire, budget, kit, sedi e livello di personalizzazione.",
+        founderCopy: "Mappiamo employee, momenti, budget, sedi e livello di personalizzazione.",
         slots: "Pilot disponibili per aziende a Bologna e Milano.",
         cards: [
           ["Setup leggero", "CSV oggi, HRIS in arrivo. Nessuna installazione o migrazione richiesta."],
@@ -23,12 +23,12 @@ const FinalCTA = () => {
       }
     : {
         title: "Start an operational pilot.",
-        highlight: "Prove the value on your team's real moments.",
-        copy: "We configure Remvy around your employees, define the rules for key moments and run execution, delivery and feedback for a few months.",
+        highlight: "Start improving your team's moments.",
+        copy: "We configure rules, kits, delivery and feedback for your pilot.",
         primary: "Talk to Matteo",
         secondary: "Review the workflow",
         founderTitle: "Talk to the founder",
-        founderCopy: "We map how this would work in your specific case: employee count, moments to cover, budget, kits, locations and personalization level.",
+        founderCopy: "We map employees, moments, budget, locations and personalization level.",
         slots: "Pilot spots available for Bologna and Milano companies.",
         cards: [
           ["Light setup", "CSV today, HRIS coming soon. No installation or migration required."],

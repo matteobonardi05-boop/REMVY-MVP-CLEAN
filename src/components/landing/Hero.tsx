@@ -9,36 +9,16 @@ const Hero = () => {
     ? {
         moreCities: "More coming soon",
         badge: "Employee moments operating system",
-        line1: "Tutti gli employee moments",
-        line2: "gestiti automaticamente",
-        line3: "senza perdite di tempo interne",
-        subtitle: "Carichi il team una volta, definisci le regole e Remvy gestisce reminder, tracking, sourcing, delivery e feedback.",
-        body: "Costruito per team attenti alla cultura interna che vogliono automatizzare l'intero processo e trasformare ogni employee moment in un experience costante, memorabile. Compleanni, onboarding, anniversari lavorativi e milestone funzionano in modo coerente senza dipendere da memoria, spreadsheet, chat o follow-up\u00A0interni.",
-        primary: "Attiva un pilot",
-        secondary: "Guarda il workflow",
-        proof: [
-          ["Non è un tool HR", "Si appoggia ai flussi esistenti e rimuove un processo operativo, invece di crearne uno nuovo."],
-          ["Non è solo gifting", "Il gift è l'output fisico. Il valore è coordinare regole, timing, fornitori e delivery."],
-          ["Sistema operativo", "Ogni momento viene tracciato, preparato, consegnato e misurato con lo stesso standard."],
-        ],
-        note: "Ideale per team con più di 20 dipendenti, dove la gestione informale inizia a rompersi con la crescita.",
+        title: "I momenti del tuo team meritano di essere riconosciuti nel modo giusto.",
+        subtitle: "Remvy è il sistema che porta automazione e struttura nell'employee recognition, così ogni momento diventa un pilastro della tua cultura aziendale.",
+        primary: "Richiedi un Pilot",
       }
     : {
         moreCities: "More coming soon",
         badge: "Employee moments operating system",
-        line1: "Every employee moments",
-        line2: "handled automatically",
-        line3: "without internal time-waste",
-        subtitle: "Upload the team once, define the rules and Remvy handles reminders, tracking, sourcing, delivery and feedback.",
-        body: "Built for culture-oriented teams that want to automate the entire process and turn every employee moment into a consistent, memorable experience. Birthdays, onboarding, work anniversaries and milestones run consistently without relying on memory, spreadsheets, chats or internal follow-up.",
+        title: "Your team's moments deserve to be recognized the right way.",
+        subtitle: "Remvy brings automation and structure to employee recognition, so every moment becomes a pillar of your company culture.",
         primary: "Start a pilot",
-        secondary: "View the workflow",
-        proof: [
-          ["Not an HR tool", "It sits on top of your current flow and removes an operational process instead of adding one."],
-          ["Not just gifting", "The gift is the physical output. The value is coordinating rules, timing, suppliers and delivery."],
-          ["Operating system", "Every moment is tracked, prepared, delivered and measured with the same standard."],
-        ],
-        note: "Ideal for teams with more than 20 employees, where informal coordination starts breaking as the company grows.",
       };
 
   return (
@@ -57,7 +37,7 @@ const Hero = () => {
         aria-hidden
       />
 
-      <div className="relative mx-auto w-full max-w-[1240px] px-6 pb-24 pt-24 lg:px-10 lg:pb-36 lg:pt-32">
+      <div className="relative mx-auto w-full max-w-[1240px] px-6 pb-20 pt-20 lg:px-10 lg:pb-32 lg:pt-28">
         <div className="mx-auto max-w-4xl text-center">
           <div className="mb-5 flex flex-wrap items-center justify-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.18em]">
             {["Bologna", "Milano"].map((city) => (
@@ -79,48 +59,33 @@ const Hero = () => {
             {t.badge}
           </span>
 
-          <h1 className="mt-7 font-display text-[clamp(1.55rem,6.4vw,2.45rem)] font-extrabold leading-[1] tracking-tight text-foreground sm:text-5xl lg:text-[5.05rem]">
-            <span className="block whitespace-nowrap">{t.line1}</span>
-            <span className="mt-2 block whitespace-nowrap">{t.line2}</span>
-            <span className="mt-2 block whitespace-nowrap text-accent text-glow sm:-translate-x-5 lg:-translate-x-8">{t.line3}</span>
-          </h1>
+          {isItalian ? (
+            <h1 className="mx-auto mt-7 max-w-5xl font-display text-[clamp(2.15rem,7.5vw,4.6rem)] font-extrabold leading-[1.02] tracking-tight text-foreground">
+              I momenti del tuo team{" "}
+              <span className="text-accent text-glow">meritano di essere riconosciuti nel modo giusto</span>
+            </h1>
+          ) : (
+            <h1 className="mx-auto mt-7 max-w-5xl font-display text-[clamp(2.15rem,7.5vw,4.6rem)] font-extrabold leading-[1.02] tracking-tight text-foreground">
+              Your team's moments{" "}
+              <span className="text-accent text-glow">deserve to be recognized the right way</span>
+            </h1>
+          )}
 
-          <p className="mx-auto mt-5 max-w-[84rem] text-base font-medium tracking-[0.02em] text-foreground/82 lg:whitespace-nowrap lg:text-lg">
+          <p className="mx-auto mt-5 max-w-3xl text-base font-medium tracking-[0.02em] text-foreground/82 lg:text-lg">
             {t.subtitle}
           </p>
 
-          <p className="mx-auto mt-6 max-w-[112ch] text-lg leading-relaxed text-muted-foreground text-pretty lg:text-[1.05rem] xl:text-[1.12rem]">
-            {t.body}
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-9 flex items-center justify-center">
             <a
               href="#cta"
               className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground shadow-cta transition-all hover:-translate-y-px hover:shadow-glow"
             >
               {t.primary}
             </a>
-            <a
-              href="#how"
-              className="inline-flex items-center justify-center rounded-full border border-border-strong bg-surface/40 px-7 py-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-surface"
-            >
-              {t.secondary}
-            </a>
           </div>
-
-          <div className="mt-8 flex max-w-full snap-x gap-3 overflow-x-auto pb-2 text-sm sm:grid sm:grid-cols-3 sm:overflow-visible sm:pb-0">
-            {t.proof.map(([title, copy]) => (
-              <div key={title} className="min-w-[78%] snap-center rounded-2xl border border-border bg-card/80 px-4 py-4 text-left shadow-soft sm:min-w-0">
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">{title}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-6 text-sm text-muted-foreground">{t.note}</p>
         </div>
 
-        <div className="mt-20 lg:mt-28">
+        <div className="mt-16 lg:mt-24">
           <DashboardMock />
         </div>
       </div>
