@@ -154,12 +154,12 @@ const Packages = () => {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <div className="mt-10 flex max-w-full snap-x gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-2 md:overflow-visible md:pb-0">
           {activeMoments.map((moment) => {
             const Icon = moment.icon;
 
             return (
-              <div key={moment.labelEn} className="rounded-[28px] border border-border-strong bg-card/92 p-6 shadow-soft">
+              <div key={moment.labelEn} className="min-w-[82%] snap-center rounded-[28px] border border-border-strong bg-card/92 p-6 shadow-soft sm:min-w-[48%] md:min-w-0">
                 <div className="inline-flex size-12 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10">
                   <Icon className="size-5 text-accent" strokeWidth={1.7} />
                 </div>
@@ -206,9 +206,9 @@ const Packages = () => {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 flex max-w-full snap-x gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 xl:grid-cols-4">
             {activePackages.map((item) => (
-              <div key={item.name} className="rounded-[26px] border border-border bg-background/25 p-5 shadow-soft">
+              <div key={item.name} className="min-w-[78%] snap-center rounded-[26px] border border-border bg-background/25 p-5 shadow-soft sm:min-w-0">
                 <span className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-accent">
                   {isItalian ? item.momentIt : item.momentEn}
                 </span>

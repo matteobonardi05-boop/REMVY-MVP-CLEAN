@@ -77,12 +77,12 @@ const HowItWorks = () => {
             aria-hidden
           />
 
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="flex max-w-full snap-x gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-2 md:overflow-visible md:pb-0 lg:grid-cols-4">
             {steps.map((step, index) => {
               const Icon = step.icon;
 
               return (
-                <div key={step.title} className="relative rounded-[28px] border border-border-strong bg-card/95 p-6 shadow-soft">
+                <div key={step.title} className="relative min-w-[82%] snap-center rounded-[28px] border border-border-strong bg-card/95 p-6 shadow-soft sm:min-w-[48%] md:min-w-0">
                   <div className="flex items-center gap-4">
                     <div className="inline-flex size-14 items-center justify-center rounded-full border border-accent/40 bg-accent/10 shadow-glow">
                       <Icon className="size-6 text-accent" strokeWidth={1.6} />

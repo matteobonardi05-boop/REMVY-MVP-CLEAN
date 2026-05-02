@@ -79,7 +79,7 @@ const WhyRemvy = () => {
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
               {isItalian ? "Perché conta" : "Why this matters"}
             </p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            <div className="mt-6 flex max-w-full snap-x gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 sm:overflow-visible sm:pb-0 lg:grid-cols-1">
               {(isItalian
                 ? [
                     ["Meno lavoro non core", "Il team evita task ricorrenti."],
@@ -91,7 +91,7 @@ const WhyRemvy = () => {
                     ["Consistent experience", "Every employee receives one standard."],
                     ["Scalable culture", "Care no longer depends on memory."],
                   ]).map(([title, copy]) => (
-                <div key={title} className="rounded-2xl border border-border bg-background/35 p-4">
+                <div key={title} className="min-w-[78%] snap-center rounded-2xl border border-border bg-background/35 p-4 sm:min-w-0">
                   <p className="font-display text-lg font-bold text-foreground">{title}</p>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{copy}</p>
                 </div>
@@ -100,11 +100,11 @@ const WhyRemvy = () => {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-4">
+        <div className="mt-10 flex max-w-full snap-x gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-4 md:overflow-visible md:pb-0">
           {summary.map((item) => (
             <div
               key={item.label}
-              className={`rounded-[24px] border p-5 ${
+              className={`min-w-[72%] snap-center rounded-[24px] border p-5 sm:min-w-[42%] md:min-w-0 ${
                 item.accent ? "border-accent/50 bg-accent/10 shadow-glow" : "border-border bg-card/90 shadow-soft"
               }`}
             >

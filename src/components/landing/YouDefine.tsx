@@ -92,9 +92,9 @@ const YouDefine = () => {
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
                 {isItalian ? "Cosa controlli" : "What you control"}
               </p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              <div className="mt-6 flex max-w-full snap-x gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-1">
                 {controlItems.map((item) => (
-                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-border bg-background/30 px-4 py-3">
+                  <div key={item} className="flex min-w-[78%] snap-center items-start gap-3 rounded-2xl border border-border bg-background/30 px-4 py-3 sm:min-w-0">
                     <span className="mt-0.5 inline-flex size-5 items-center justify-center rounded-full bg-accent/15 text-accent">
                       <Check className="size-3.5" strokeWidth={2.4} />
                     </span>
@@ -117,9 +117,9 @@ const YouDefine = () => {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+        <div className="mt-10 flex max-w-full snap-x gap-5 overflow-x-auto pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
           {items.map(({ icon: Icon, label, title, body, highlights }) => (
-            <div key={title} className="rounded-[28px] border border-border bg-card/95 p-6 shadow-soft lg:p-7">
+            <div key={title} className="min-w-[84%] snap-center rounded-[28px] border border-border bg-card/95 p-6 shadow-soft sm:min-w-[52%] lg:min-w-0 lg:p-7">
               <div className="flex items-start justify-between gap-4">
                 <div className="inline-flex size-12 items-center justify-center rounded-2xl border border-accent/25 bg-accent/10 text-accent">
                   <Icon className="size-5" strokeWidth={1.6} />
