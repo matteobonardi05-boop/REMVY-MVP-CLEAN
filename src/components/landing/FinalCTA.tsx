@@ -20,10 +20,10 @@ const FinalCTA = () => {
               style={{ fontSize: "clamp(48px, 4.5vw, 60px)" }}
             >
               <span className="sm:hidden">Get in touch!</span>
-              <span className="hidden sm:inline">Get in touch con il founder Matteo!</span>
+              <span className="hidden sm:inline">Get in touch with the founder Matteo!</span>
             </h2>
 
-            <form className="mt-12 grid gap-4" action="mailto:mattobonardi05@gmail.com" method="post" encType="text/plain">
+            <form className="mt-12 grid gap-4" action="mailto:matteobonardi05@gmail.com" method="post" encType="text/plain">
               <div className="grid gap-4 md:grid-cols-2">
                 <input className={inputClassName} name="first_name" placeholder="First name" type="text" />
                 <input className={inputClassName} name="last_name" placeholder="Last name" type="text" />
