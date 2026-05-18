@@ -1,115 +1,61 @@
-import { Linkedin, Phone } from "lucide-react";
-
-import { useIsItalian } from "@/lib/locale";
+import { ArrowRight } from "lucide-react";
 
 const FinalCTA = () => {
-  const isItalian = useIsItalian();
-
-  const t = isItalian
-    ? {
-        title: "Attiva un pilot operativo.",
-        highlight: "Comincia a migliorare i momenti del tuo team.",
-        copy: "Configuriamo regole, kit, delivery e feedback per il tuo pilot.",
-        primary: "Parla con Matteo",
-        secondary: "Rivedi il workflow",
-        founderTitle: "Parla con il founder",
-        founderCopy: "Mappiamo employee, momenti, budget, sedi e livello di personalizzazione.",
-        slots: "Pilot disponibili per aziende a Bologna e Milano.",
-        cards: [
-          ["Setup leggero", "CSV oggi, HRIS in arrivo. Nessuna installazione o migrazione richiesta."],
-          ["Modello trasparente", "Fee mensile per il sistema + costo per ogni kit eseguito."],
-          ["Decisione reversibile", "Dopo il pilot puoi continuare, modificare o interrompere."],
-        ],
-      }
-    : {
-        title: "Start an operational pilot.",
-        highlight: "Start improving your team's moments.",
-        copy: "We configure rules, kits, delivery and feedback for your pilot.",
-        primary: "Talk to Matteo",
-        secondary: "Review the workflow",
-        founderTitle: "Talk to the founder",
-        founderCopy: "We map employees, moments, budget, locations and personalization level.",
-        slots: "Pilot spots available for Bologna and Milano companies.",
-        cards: [
-          ["Light setup", "CSV today, HRIS coming soon. No installation or migration required."],
-          ["Transparent model", "Monthly system fee + cost for each executed kit."],
-          ["Reversible decision", "After the pilot you can continue, adjust or stop."],
-        ],
-      };
-
   return (
-    <section id="cta" className="relative overflow-hidden border-t border-border">
-      <div
-        className="absolute left-1/2 top-1/2 -z-0 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)/0.22),transparent_60%)]"
-        aria-hidden
-      />
-      <div className="absolute inset-0 bg-grid opacity-30" aria-hidden />
-
-      <div className="relative mx-auto w-full max-w-[1240px] px-6 py-16 text-center lg:px-10 lg:py-36">
-        <h2 className="mx-auto max-w-3xl font-display text-[clamp(2rem,9vw,2.45rem)] font-extrabold leading-[1.05] tracking-tight text-foreground text-balance sm:text-4xl lg:text-6xl">
-          <span className="block">{t.title}</span>
-          <span className="mt-2 block text-accent text-glow">{t.highlight}</span>
-        </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-          {t.copy}
-        </p>
-
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="tel:+393348068487"
-            className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground shadow-cta transition-all hover:-translate-y-px hover:shadow-glow"
-          >
-            {t.primary}
-          </a>
-          <a
-            href="#how"
-            className="inline-flex items-center justify-center rounded-full border border-border-strong bg-surface/40 px-7 py-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-surface"
-          >
-            {t.secondary}
-          </a>
-        </div>
-
-        <div className="mx-auto mt-10 max-w-2xl rounded-[2rem] border border-border-strong bg-card/80 p-5 text-left shadow-soft backdrop-blur md:p-6">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-accent">{t.founderTitle}</p>
-              <p className="mt-2 font-display text-2xl font-bold tracking-tight text-foreground">Matteo</p>
-              <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">{t.founderCopy}</p>
+    <section id="cta" className="relative border-t border-border bg-background">
+      <div className="mx-auto w-full max-w-[1240px] px-5 py-16 sm:px-6 lg:px-10 lg:py-28">
+        <div className="relative overflow-hidden rounded-[34px] border border-border-strong bg-[linear-gradient(135deg,hsl(var(--surface)/0.94),hsl(var(--card)/0.98))] p-6 shadow-elegant sm:p-8 lg:rounded-[44px] lg:p-12">
+          <div
+            className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,hsl(var(--background)/0.18),transparent_45%)]"
+            aria-hidden
+          />
+          <div className="relative">
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-accent">
+              <span className="size-2 rounded-full bg-accent shadow-[0_0_12px_hsl(var(--accent)/0.75)]" />
+              Contact us
             </div>
-            <div className="flex shrink-0 flex-col gap-2">
-              <a
-                href="tel:+393348068487"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-accent/45 bg-accent/10 px-5 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
+
+            <h2
+              className="mt-9 max-w-none whitespace-nowrap [font-family:Georgia,'Times_New_Roman',serif] font-normal leading-[1.08] tracking-[-0.06em] text-foreground"
+              style={{ fontSize: "clamp(48px, 4.5vw, 60px)" }}
+            >
+              <span className="sm:hidden">Get in touch!</span>
+              <span className="hidden sm:inline">Get in touch con il founder Matteo!</span>
+            </h2>
+
+            <form className="mt-12 grid gap-4" action="mailto:mattobonardi05@gmail.com" method="post" encType="text/plain">
+              <div className="grid gap-4 md:grid-cols-2">
+                <input className={inputClassName} name="first_name" placeholder="First name" type="text" />
+                <input className={inputClassName} name="last_name" placeholder="Last name" type="text" />
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <input className={inputClassName} name="phone" placeholder="Phone number" type="tel" />
+                <input className={inputClassName} name="email" placeholder="Email" type="email" />
+              </div>
+
+              <textarea
+                className={`${inputClassName} min-h-[120px] resize-none pt-5`}
+                name="message"
+                placeholder="Tell us about: your company, location, number of people in the team, moments you want to manage, current internal process..."
+              />
+
+              <button
+                type="submit"
+                className="mt-2 inline-flex w-fit items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground shadow-cta transition-all hover:-translate-y-px hover:shadow-glow"
               >
-                <Phone className="size-4" strokeWidth={1.8} />
-                +39 334 806 8487
-              </a>
-              <a
-                href="https://www.linkedin.com/in/matteo-bonardi"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-border-strong bg-surface/45 px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-surface"
-              >
-                <Linkedin className="size-4 text-accent" strokeWidth={1.8} />
-                LinkedIn
-              </a>
-            </div>
+                Submit form
+                <ArrowRight className="ml-2 size-4" />
+              </button>
+            </form>
           </div>
         </div>
-
-        <div className="mx-auto mt-8 flex max-w-full snap-x gap-3 overflow-x-auto pb-2 text-left sm:grid sm:max-w-4xl sm:grid-cols-3 sm:overflow-visible sm:pb-0">
-          {t.cards.map(([title, copy]) => (
-            <div key={title} className="min-w-[78%] snap-center rounded-2xl border border-border bg-card/75 px-4 py-4 shadow-soft sm:min-w-0">
-              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">{title}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-6 text-sm text-muted-foreground">{t.slots}</p>
       </div>
     </section>
   );
 };
+
+const inputClassName =
+  "w-full rounded-2xl border border-border-strong bg-background/92 px-5 py-4 text-base font-medium text-black outline-none transition-all placeholder:text-muted-foreground focus:border-accent focus:ring-4 focus:ring-accent/18";
 
 export default FinalCTA;

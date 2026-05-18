@@ -1,11 +1,9 @@
 import Nav from "@/components/landing/Nav";
 import Hero from "@/components/landing/Hero";
-import YouDefine from "@/components/landing/YouDefine";
-import Packages from "@/components/landing/Packages";
-import Integrations from "@/components/landing/Integrations";
-import WhyRemvy from "@/components/landing/WhyRemvy";
-import Problem from "@/components/landing/Problem";
+import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import HowItWorks from "@/components/landing/HowItWorks";
+import ServicesCarousel from "@/components/landing/ServicesCarousel";
+import FeaturesGrid from "@/components/landing/FeaturesGrid";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 
@@ -14,12 +12,10 @@ const IndexIt = () => {
     <main className="min-h-screen bg-background">
       <Nav />
       <Hero />
-      <YouDefine />
-      <Packages />
+      <WhyChooseUs />
+      <FeaturesGrid />
       <HowItWorks />
-      <Integrations />
-      <Problem />
-      <WhyRemvy />
+      <ServicesCarousel />
       <FinalCTA />
       <Footer />
     </main>
