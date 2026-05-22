@@ -5,6 +5,7 @@ import HowItWorks from "@/components/landing/HowItWorks";
 import ServicesCarousel from "@/components/landing/ServicesCarousel";
 import FeaturesGrid from "@/components/landing/FeaturesGrid";
 import FinalCTA from "@/components/landing/FinalCTA";
+import SupplierNetworkCTA from "@/components/landing/SupplierNetworkCTA";
 import Footer from "@/components/landing/Footer";
 
 const IndexIt = () => {
@@ -17,6 +18,7 @@ const IndexIt = () => {
       <HowItWorks />
       <ServicesCarousel />
       <FinalCTA />
+      <SupplierNetworkCTA />
       <Footer />
     </main>
   );

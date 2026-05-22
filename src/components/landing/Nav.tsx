@@ -12,6 +12,7 @@ const Nav = () => {
         ["How it works", "#how"],
         ["Services", "#services"],
         ["Contact", "#cta"],
+        ["Supplier", "#suppliers"],
       ]
     : [
         ["Why choose us", "#why-choose-us"],
@@ -19,6 +20,7 @@ const Nav = () => {
         ["How it works", "#how"],
         ["Services", "#services"],
         ["Contact", "#cta"],
+        ["Supplier", "#suppliers"],
       ];
 
   return (
